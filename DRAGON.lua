@@ -983,7 +983,7 @@ keyboard.inline_keyboard = {
 {{text = 'المبرمج فرنسا', url="t.me/F_R_A_N_C_E_1"}},
 {{text = 'المالك القناص', url="t.me/alknas11"}},
 {{text = 'بوت تواصل فرنسا',url="t.me/Bot_FRANCE_Bot"}}, 
-{{text = 'بوت تولصل القناص', url="t.me/vodika_55_bot"}},
+{{text = 'بوت تواصل القناص', url="t.me/vodika_55_bot"}},
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -1000,7 +1000,7 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'المـبـرمــج جـابــوا', url="t.me/J_A_B_W_A"}},
-{{text = 'بــوت تواصـل جـابــوا',url="t.me/J_a_b_w_a_bot"}}, 
+{{text = 'بــوت تواصـل جـابــوا',url="t.me/Bot_JABWA_Bot"}}, 
 {{text = 'بــار تواصـل جـابــوا',url="t.me/TWASLJABWA"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
@@ -1061,7 +1061,7 @@ if text == 'قـسم مـطورين الـسورس' then
 local Text = 'قسم مطورين السورس لدخول الي حسابتهم'
 local Key = {
 {'⇣•-•-•-•⟮قـناه الـبرمجه⟯•-•-•-•⇣'},
-{'المبرمج فرنسا','مبرمج جابوا'},
+{'المبرمج فرنسا','المبرمج جابوا'},
 {'المالك القناص'},
 {'قناة السورس','التواصل'},
 {'العوده 𖢄'},
@@ -1545,7 +1545,7 @@ end
 if text == 'جابوا مبرمج السورس²' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
-المبرمج جابوا لو حابب تتواصل معاه
+مبرمج جابوا لو حابب تتواصل معاه
 اتبع الزر إلى تحت ⇈⇊
 ]] 
 keyboard = {}  
@@ -3302,7 +3302,7 @@ keyboard.inline_keyboard = {
 {{text = 'أضغط لاضافه ألبوت لمجموعتك 𖢄' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == 'مين نصبلك' or text == 'عايزه بوت' or text == 'عايز بوت' then
@@ -3321,7 +3321,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qwressv/162&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == 'جابوا' or text == 'المبرمج جابوا' or text == 'صاحب السورس' or text == 'مبرمج السورس' then
+if text == 'جابوا' or text == 'ا' or text == 'صاحب السورس' or text == 'مبرمج السورس' then
 local Text = [[
 جابوا مبرمج السورس² لو حابب تتواصل معاه
 اتبع الزر إلى تحت ⇈⇊
@@ -3341,7 +3341,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝐃𝐄𝐕 𝐅𝐀𝐑𝐍𝐂𝐄',url="t.me/TahaSayed9"}},
+{{text = '𝐃𝐄𝐕 𝐅𝐀𝐑𝐍𝐂𝐄',url="t.me/F_R_A_N_C_E_1"}},
 {{text = 'أضغط لاضافه ألبوت لمجموعتك 𖢄' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3354,7 +3354,7 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '𝐃𝐄𝐕 𝐀𝐋𝐊𝐀𝐍𝐀𝐒',url="t.me/Dv_Exlevr"}},
+{{text = '𝐃𝐄𝐕 𝐀𝐋𝐊𝐀𝐍𝐀𝐒',url="t.me/alknas11"}},
 {{text = 'أضغط لاضافه ألبوت لمجموعتك 𖢄' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
@@ -15589,7 +15589,7 @@ local List = {
 [[
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
  𝗨𝗦𝗘𝗥 ⟿ #username  « 
- 𝗠𝗦𝗚𝗦 ⟿  #msgs  « 
+ 𝗠𝗦??𝗦 ⟿  #msgs  « 
  𝗦𝗧𝗔 ⟿ #stast  « 
  𝗜𝗗  ⟿ #id  « 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
