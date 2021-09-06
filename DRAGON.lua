@@ -149,16 +149,14 @@ _redis = load_redis()
 --------------------------------------------------------------------------------------------------------------
 print([[
 
-     ____.  _____ __________  __      __  _____   
-    |    | /  _  \\______   \/  \    /  \/  _  \  
-    |    |/  /_\  \|    |  _/\   \/\/   /  /_\  \ 
-/\__|    /    |    \    |   \ \        /    |    \
-\________\____|__  /______  /  \__/\  /\____|__  /
-                 \/       \/        \/         \/ 
+  _   ______  ___  ________ _____ 
+ | | / / __ \/ _ \/_  __/ //_/ _ |
+ | |/ / /_/ / // / / / / ,< / __ |
+ |___/\____/____/ /_/ /_/|_/_/ |_|
+                                  
                           
 ~> HC↝@A_F_fwdka1↜
 ~> DEVELOPER ↝@F_R_A_N_C_E_1
-~> DEVELOPER² ↝@J_A_B_W_A
 ]])
 sudos = dofile("./Banda.lua") 
 SUDO = tonumber(sudos.SUDO)
@@ -962,7 +960,7 @@ keyboard.inline_keyboard = {
 }
 local function getpro(extra, result, success) 
 if result.photos_[0] then 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&caption=' .. URL.escape(Namebot).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 else 
 send(msg.chat_id_, msg.id_,Namebot, 1, 'md') 
 end 
@@ -986,7 +984,7 @@ keyboard.inline_keyboard = {
 {{text = 'بوت تواصل القناص', url="t.me/vodika_55_bot"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 end
 if text == "اسعار السورسات باكمل الحقوق" then
@@ -1340,7 +1338,7 @@ keyboard.inline_keyboard = {
 {{text = 'أضغط لاضافه ألبوت لمجموعتك 𖢄' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qwressv/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == 'قسـم مـطـورين السـورس' and DevSoFi(msg) then 
@@ -1477,7 +1475,7 @@ keyboard.inline_keyboard = {
 {{text = 'تواصل السورس', url="t.me/Bot_FRANCE_Bot"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/vagwg/8&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == '⩹━━━━━❲𖥳 𝐕𝐎𝐃𝐓𝐊𝐀 𖥳❳━━━━━⩺' and DevSoFi(msg) then
 local Text = [[ 
@@ -1488,7 +1486,7 @@ keyboard.inline_keyboard = {
 {{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀', url="t.me/A_F_fwdka1"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/Qwressv/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == 'معلومات الكيبورد' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
@@ -3284,7 +3282,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/406/903&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
-if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
+if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'فودكا' then
 local Text = [[
 
 ╭▱▰▱▰𓆩[𝐕𝐎𝐃𝐓𝐊𝐀](http://t.me/A_F_fwdka1)𓆪▱▰▱▰╮
@@ -3298,7 +3296,7 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {{text = '𝐅𝐀𝐑𝐍𝐂𝐄',url="t.me/F_R_A_N_C_E_1"},{text = '𝐀𝐋𝐊𝐀𝐍𝐀𝐒', url="t.me/alknas11"}},
 {{text = '𝐉𝐀𝐁𝐖𝐀',url="t.me/J_A_B_W_A"}},
-{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀´',url="t.me/A_F_fwdka1"}},
+{{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀',url="t.me/A_F_fwdka1"}},
 {{text = 'أضغط لاضافه ألبوت لمجموعتك 𖢄' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3307,8 +3305,8 @@ end
 
 if text == 'مين نصبلك' or text == 'عايزه بوت' or text == 'عايز بوت' then
 local Text = [[
- 𖢄 اهلا بك في سورس الفودكا الجمدان 𖢄
- 𖢄 عايز بوت بأسعار منسبه وبوت مميز كلمني 𖢄  
+𖢄 اهلا بك في سورس الفودكا الجمدان 𖢄
+𖢄 عايز بوت بأسعار منسبه وبوت مميز كلمني 𖢄  
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -3318,10 +3316,10 @@ keyboard.inline_keyboard = {
 {{text = 'أضغط لاضافه ألبوت لمجموعتك 𖢄' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qwressv/162&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == 'جابوا' or text == 'ا' or text == 'صاحب السورس' or text == 'مبرمج السورس' then
+if text == 'جابوا' or text == 'المبرمج جابوا' or text == 'مين عملك السورس' or text == 'مبرمح السورس²' then
 local Text = [[
 جابوا مبرمج السورس² لو حابب تتواصل معاه
 اتبع الزر إلى تحت ⇈⇊
@@ -3347,9 +3345,9 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/F_R_A_N_C_E_1&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-if text == 'المالك القناص' or text == 'القناص' or text == 'مالك القناص' or text == 'شقيق فرنسا' then
+if text == 'المالك قناص' or text == 'القناص' or text == 'قناص' or text == 'مالك السورس' then
 local Text = [[
-القناص المالك القناص لو حابب تتواصل معاه
+قناص مالك السورس لو حابب تتواصل معاه
 اتبع الزر إلى تحت ⇈⇊
 ]]
 keyboard = {} 
@@ -3373,7 +3371,7 @@ keyboard.inline_keyboard = {
 {{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀', url="t.me/A_F_fwdka1"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/c/1522880126/3=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == 'قناة السورس' or text == 'قناه السورس' or text == 'قناة البرمجه' or text == 'قناة سورس فودكا' then
 local Text = [[
@@ -3387,7 +3385,7 @@ keyboard.inline_keyboard = {
 {{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀', url="t.me/A_F_fwdka1"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/A_F_fwdka1&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == 'يوتيوب' or text == 'بحث' or text == 'اليوتيوب' then
 local Text = [[
@@ -4497,14 +4495,14 @@ local Text = [[
 من أحسن السورسات على التليجرام سورس الفودكا
 حمايه↤سرعه↤دقه↤وامان
  قناه السورس ⇈⇊
-[𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝚂𝙰𝙸𝙳𝙰](http://t.me/A_F_fwdka1)
+[𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝚅𝙾𝙳𝚃𝙺𝙰](http://t.me/A_F_fwdka1)
 ]]
 keyboard = {}  
 keyboard.inline_keyboard = { 
 {{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀', url="t.me/A_F_fwdka1"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qwressv/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == 'التواصل' or text == 'التوصل' or text == 'بوت توصل' or text == 'بوت تواصل' then
 database:del(bot_id..'Srt:Bot') 
@@ -4516,9 +4514,9 @@ keyboard.inline_keyboard = {
 {{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀', url="t.me/A_F_fwdka1"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/Qwressv/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == 'العاب الفودكا' or text == 'العاب مطوره' or text == 'العاب متطوره' then  
+if text == 'العاب الفودكا' or text == 'العاب فودكا' or text == 'العاب المتطوره' then  
 local Text = [[  
 ↯ اهلا في قائمه الالعاب المتطوره سورس الفودكا ↯
 تفضل اختر لعبه من القائمه 
@@ -6351,7 +6349,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,' 𖢄 لا ����ستطيع استخدام البوت \n 𖢄  يرجى الاشتراك بالقناه اولا \n 𖢄  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,' 𖢄 لا ����ستطيع استخدام البوت \n ??  يرجى الاشتراك بالقناه اولا \n 𖢄  اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -11380,7 +11378,7 @@ for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  `"..v.."` \n"
 end
-send(msg.chat_id_, msg.id_, t..'⩹━━━━━❲𖥳 𝐕𝐎𝐃𝐓𝐊𝐀 𖥳❳━━━━━⩺\nاضغط علي الاسم ليتم نسخه\n⩹━━━━━❲𖥳 𝐕𝐎𝐃𝐓𝐊𝐀 𖥳❳━━━━━⩺ٴ\n ☾ ❲[𝐒𝐎𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀](t.me/A_F_fwdka1)❳ 𖢄 ')
+send(msg.chat_id_, msg.id_, t..'⩹━━━━━❲𖥳 𝐕𝐎𝐃𝐓𝐊𝐀 𖥳❳━━━━━⩺\nاضغط علي الاسم ليتم نسخه\n⩹━━━━━❲𖥳 𝐕𝐎𝐃𝐓𝐊𝐀 𖥳❳━━━━━⩺ٴ\n ☾ ❲[𝐒??𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀](t.me/A_F_fwdka1)❳ 𖢄 ')
 end
 if text == "ضع رابط" or text == 'وضع رابط' then
 if msg.reply_to_message_id_ == 0  and Mod(msg) then  
