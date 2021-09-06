@@ -980,7 +980,7 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {{text = 'المبرمج فرنسا', url="t.me/F_R_A_N_C_E_1"}},
 {{text = 'المالك القناص', url="t.me/alknas11"}},
-{{text = 'بوت تواصل فرنسا',url="t.me/Bot_FRANCE_Bot"}}, 
+{{text = 'بوت تواصل فرنسا',url="t.me/farnce_2bot"}}, 
 {{text = 'بوت تواصل القناص', url="t.me/vodika_55_bot"}},
 }
 local msg_id = msg.id_/2097152/0.5
@@ -1472,7 +1472,7 @@ local Text = [[
 keyboard = {}  
 keyboard.inline_keyboard = { 
 {{text = 'مبرمج السورس', url="t.me/F_R_A_N_C_E_1"}}, 
-{{text = 'تواصل السورس', url="t.me/Bot_FRANCE_Bot"}}, 
+{{text = 'تواصل السورس', url="t.me/farnce_2bot"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -3297,7 +3297,7 @@ keyboard.inline_keyboard = {
 {{text = '𝐅𝐀𝐑𝐍𝐂𝐄',url="t.me/F_R_A_N_C_E_1"},{text = '𝐀𝐋𝐊𝐀𝐍𝐀𝐒', url="t.me/alknas11"}},
 {{text = '𝐉𝐀𝐁𝐖𝐀',url="t.me/J_A_B_W_A"}},
 {{text = '𝐒𝐎𝐔𝐑𝐂𝐄 𝐕𝐎𝐃𝐓𝐊𝐀',url="t.me/A_F_fwdka1"}},
-{{text = 'أضغط لاضافه ألبوت لمجموعتك 𖢄' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
+{{text = 'أضغط لاضافه ألبوت لمجموعتك ??' ,url="t.me/"..dofile("./Banda.lua").botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/A_F_fwdka1/148/163&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -4507,7 +4507,7 @@ end
 if text == 'التواصل' or text == 'التوصل' or text == 'بوت توصل' or text == 'بوت تواصل' then
 database:del(bot_id..'Srt:Bot') 
 local Text = [[ 
-[ᴛᴡᴀѕʟ sᴏᴜʀᴄᴇ](t.me/Bot_FRANCE_Bot)
+[ᴛᴡᴀѕʟ sᴏᴜʀᴄᴇ](t.me/farnce_2bot)
 ]] 
 keyboard = {}  
 keyboard.inline_keyboard = { 
