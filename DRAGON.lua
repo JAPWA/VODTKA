@@ -3204,7 +3204,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == 'تحكم' and msg.reply_to_message_id_ and Mod(msg) then
+if text == 'تحكم' and DevSoFi(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local XXx_cLASsIC_xXX = database:get(bot_id..'text:ch:user')
 if XXx_cLASsIC_xXX then
@@ -3239,7 +3239,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
-if text == 'تحكم الرتبه' and msg.reply_to_message_id_ and Mod(msg) then
+if text == 'تحكم رتبه' and DevSoFi(msg) then
 if AddChannel(msg.sender_user_id_) == false then
 local XXx_cLASsIC_xXX = database:get(bot_id..'text:ch:user')
 if XXx_cLASsIC_xXX then
@@ -7242,7 +7242,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمنشئين") or text == ("صيح المنشئين") then
 local list = database:smembers(bot_id..'Constructor'..msg.chat_id_)
-t = "\n 🌏 وينكم تعالو يريدوكم بالجروب \n𖣘━┅┄⟞⟦𝚂𝙾🌏𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽𝙶⟧⟝┄┉━𖣘\n"
+t = "\n 🌏 وينكم تعالو يريدوكم بالجروب \n𖣘━┅┄⟞⟦𝚂𝙾🌏𝚁𝙲𝙴 𝚅??𝙺𝙸𝙽𝙶⟧⟝┄┉━𖣘\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -11620,7 +11620,7 @@ return false
 end
 tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.reply_to_message_id_,disable_notification_ = 1},function(arg,data) 
 if data.ID == "Ok" then
-send(msg.chat_id_, msg.id_," 🌏 تم تثبيت الرساله")   
+send(msg.chat_id_, msg.id_," ?? تم تثبيت الرساله")   
 database:set(bot_id..'Pin:Id:Msg'..msg.chat_id_,msg.reply_to_message_id_)
 elseif data.code_ == 6 then
 send(msg.chat_id_,msg.id_," 🌏 انا لست ادمن هنا يرجى ترقيتي ادمن ثم اعد المحاوله")  
@@ -16279,7 +16279,7 @@ Msᴀɢ ~ #msgs
 ᯓ 𝗜𝗗 . #id 🇪🇬 ꙰
 ᯓ 𝗚𝗮𝗺𝗘𝗦 . #game 🇪🇬 ꙰
 ᯓ 𝗺𝗦𝗚𝗦 . #msgs 🇪🇬 ꙰
-ᯓ ??𝗛 - ↝@V_I_K_I_N_G_1↜ 🌏.
+ᯓ 𝗖𝗛 - ↝@V_I_K_I_N_G_1↜ 🌏.
 ]],
 [[
 .𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , #username  🖤 ↴
@@ -17432,7 +17432,7 @@ return false
 end
 
 if text == 'تغير امر ⓹' and DevSoFi(msg) then
-send(msg.chat_id_, msg.id_, ' ?? الان يمكنك ارسال الكليشه ⓹')
+send(msg.chat_id_, msg.id_, ' 🌏 الان يمكنك ارسال الكليشه ⓹')
 database:set(bot_id..'help5'..msg.sender_user_id_,'true')
 return false 
 end
@@ -18508,986 +18508,173 @@ end
 end -- Chat_Type = 'GroupBot' 
 end -- end msg 
 --------------------------------------------------------------------------------------------------------------
-if Text and Text:match("^(%d+)unbeen(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('unbeen',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
+function tdcli_update_callback(data)  -- clback
+if data.ID == "UpdateChannel" then 
+if data.channel_.status_.ID == "ChatMemberStatusKicked" then 
+database:srem(bot_id..'Chek:Groups','-100'..data.channel_.id_)  
+end
+end
+if data.ID == "UpdateNewCallbackQuery" then
+local Chat_id = data.chat_id_
+local Msg_id = data.message_id_
+local msg_idd = Msg_id/2097152/0.5
+local Text = data.payload_.data_
+if Text and Text:match("^/YYYBD1 (.*)$") then
+local chatid = Text:match("^/YYYBD1 (.*)$")
+if not SudoBot(data) then
+local notText = 'انت لست المطور الاساسي لاستعمال هذا الامر'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
-database:srem(bot_id..'Ban:User'..Chat_id, userid)
-tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = Chat_id, user_id_ = userid, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*√ تـــم الغــاء حظـــره*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
+local text = 'تم مغادره المجموعه بنجاح'
+https.request("https://api.telegram.org/bot"..token..'/LeaveChat?chat_id='..chatid) 
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(text)..'&message_id='..msg_idd) 
 end
-if Text and Text:match("^(%d+)been(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('been',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
+if Text and Text:match("^/t7km1 (.*)$") then
+local userid = Text:match("^/t7km1 (.*)$")
+if not Mod(data) then
+local notText = 'يجب ان تكون ادمن لاستخدام هذا الامر'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
-if database:get(bot_id..'Lock:kick'..Chat_id) and not Constructor(data) then
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *√ تم تعطيل الحظر*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
-if SudoBot (userid) then
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*√ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
-if tonumber(userid) == tonumber(bot_id) then  
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *√ لا تسطيع حظر البوت* ")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
-if Can_or_NotCan(userid, Chat_id) == true then
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n *√ عذرا لا تستطيع حظر* ( '..Rutba(userid,Chat_id)..' )')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-else
-tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = Chat_id, user_id_ = userid, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,da) 
-if (da and da.code_ and da.code_ == 400 and da.message_ == "CHAT_ADMIN_REQUIRED") then 
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(' *√ ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false  
-end
-if data.can_be_deleted_ == false then 
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(' *√ البوت ليس ادمن يرجى ترقيتي !*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false  
-end
-database:sadd(bot_id..'Ban:User'..Chat_id, userid)
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*√ تـــم حظـــره بنجـــاح*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-chat_kick(Chat_id, userid)
-end,nil)   
-end
-return false
-end
-if Text and Text:match("^(%d+)unMut(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('unMut',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-if not database:sismember(bot_id..'Muted:User'..Chat_id,userid) then
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*√ الشخص غير مكتوم*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
+local text = 'تم الغاء كتم العضو'
 database:srem(bot_id..'Muted:User'..Chat_id, userid)
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*√ تــم الغــاء كتمــه*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(text)..'&message_id='..msg_idd) 
 end
-if Text and Text:match("^(%d+)Mut(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('Mut',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
+if Text and Text:match("^/t7km2 (.*)$") then
+local userid = Text:match("^/t7km2 (.*)$")
+if not Mod(data) then
+local notText = 'يجب ان تكون ادمن لاستخدام هذا الامر'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
-if tonumber(userid) == tonumber(bot_id) then  
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape( " *√ لا تسطيع كتم البوت* ")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false 
-end
-if SudoBot (userid) then
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*√ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false 
-end
-if Can_or_NotCan(userid, Chat_id) == true then
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n *√ عذرا لا تستطيع كتم* ( '..Rutba(userid,Chat_id)..' )')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-else
-if data.can_be_deleted_ == false then 
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(' *√ البوت ليس ادمن يرجى ترقيتي !*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false  
-end
+local text = 'تم كتم العضو'
 database:sadd(bot_id..'Muted:User'..Chat_id, userid)
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*√ تــم كتمــه بنجــاح*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(text)..'&message_id='..msg_idd) 
 end
-return false
-end
-if Text and Text:match("^(%d+)unrestrict(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('unrestrict',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
+if Text and Text:match("^/t7km3 (.*)$") then
+local userid = Text:match("^/t7km3 (.*)$")
+if not Mod(data) then
+local notText = 'يجب ان تكون ادمن لاستخدام هذا الامر'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
-https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. Chat_id .. "&user_id=" .. userid .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*√ تــم الغــاء تقييــده*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
+local text = 'تم الغاء حظر العضو'
+tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = Chat_id, user_id_ = userid, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(text)..'&message_id='..msg_idd) 
 end
-if Text and Text:match("^(%d+)restrict(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('restrict',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
+if Text and Text:match("^/t7km4 (.*)$") then
+local userid = Text:match("^/t7km4 (.*)$")
+if not Mod(data) then
+local notText = 'يجب ان تكون ادمن لاستخدام هذا الامر'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
-if tonumber(userid) == tonumber(bot_id) then  
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape( " *√ لا تسطيع تقييد البوت* ")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false 
+local text = 'تم حظر العضو'
+tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = Chat_id, user_id_ = userid, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,data) end,nil)
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(text)..'&message_id='..msg_idd) 
 end
-if SudoBot (userid) then
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*√ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false 
-end
-if Can_or_NotCan(userid, Chat_id) == true then
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n *√ عذرا لا تستطيع تقييد* ( '..Rutba(userid,Chat_id)..' )')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-else
-if data.can_be_deleted_ == false then 
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(' *√ البوت ليس ادمن يرجى ترقيتي !*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false  
-end
-https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..Chat_id.."&user_id="..userid)
-keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*√ تــم تقييــده بنجــاح*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-end
-return false
-end
-if Text and Text:match("^(%d+)UpS(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('UpS',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
+if Text and Text:match("^/t7km5 (.*)$") then
+local userid = Text:match("^/t7km5 (.*)$")
+if not Mod(data) then
+local notText = 'يجب ان تكون ادمن لاستخدام هذا الامر'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
-if CoSu (data) then
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-datainlineText = "لديه رتبه منشئ اساسي"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-datainlineText = "لديه رتبه منشئ"
-datainline = {
-{{text ='√  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
-datainlineText = "لديه رتبه مدير"
-datainline = {
-{{text ='√  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
-{{text ='√  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-datainlineText = "لديه رتبه ادمن"
-datainline = {
-{{text ='√  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
-{{text ='√  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
-{{text ='√  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-datainlineText = "لديه رتبه مميز"
-datainline = {
-{{text ='√  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
-{{text ='√  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
-{{text ='√  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
-{{text ='√  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-else
-datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
-datainline = {
-{{text ='√  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
-{{text ='√  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
-{{text ='√  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
-{{text ='√  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
-{{text ='√  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
+local text = 'تم الغاء تقيد العضو'
+https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..Chat_id.."&user_id="..userid.."&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(text)..'&message_id='..msg_idd) 
 end
-elseif BasicConstructor(data) then
-if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك اعلى رتبه تستطيع  رفعه لها"
-datainline = {	
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
-datainlineText = "لديه رتبه مدير"
-datainline = {
-{{text ='√  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-datainlineText = "لديه رتبه ادمن"
-datainline = {
-{{text ='√  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
-{{text ='√  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-datainlineText = "لديه رتبه مميز"
-datainline = {
-{{text ='√  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
-{{text ='√  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
-{{text ='√  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-else
-datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
-datainline = {
-{{text ='√  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
-{{text ='√  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
-{{text ='√  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
-{{text ='√  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-end
-elseif Constructor(data) then
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك رتبه مشابهه ل رتبتك"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك اعلى رتبه تستطيع  رفعه لها"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-datainlineText = "لديه رتبه ادمن"
-datainline = {
-{{text ='√  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-datainlineText = "لديه رتبه مميز"
-datainline = {
-{{text ='√  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
-{{text ='√  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-else
-datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
-datainline = {
-{{text ='√  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
-{{text ='√  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
-{{text ='√  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-end
-elseif Manager(data) then
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك رتبه مشابهه ل رتبتك"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك رتبه مشابهه ل رتبتك"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك اعلى رتبه تستطيع  رفعه لها"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-datainlineText = "لديه رتبه مميز"
-datainline = {
-{{text ='√ ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-else
-datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
-datainline = {
-{{text ='√  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
-{{text ='√  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-end
-elseif Mod(data) then
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك رتبه مشابهه ل رتبتك"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-datainlineText = "عذرا الشخص يمتلك اعلى رتبه تستطيع  رفعه لها"
-datainline = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-else
-datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
-datainline = {
-{{text ='√  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-end
-end
-bb = {} 
-bb.inline_keyboard = datainline
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(datainlineText)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
-return false
-end
-if Text and Text:match("^(%d+)Basic(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('Basic',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
+if Text and Text:match("^/t7km6 (.*)$") then
+local userid = Text:match("^/t7km6 (.*)$")
+if not Mod(data) then
+local notText = 'يجب ان تكون ادمن لاستخدام هذا الامر'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
-database:sadd(bot_id..'Basic:Constructor'..data.chat_id_, userid)
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*√ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))
-return false
-end
-if Text and Text:match("^(%d+)Constructor(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('Constructor',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-database:sadd(bot_id..'Constructor'..data.chat_id_, userid)
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*√ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
-if Text and Text:match("^(%d+)Manager(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('Manager',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-database:sadd(bot_id..'Manager'..data.chat_id_, userid)
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*√ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
-if Text and Text:match("^(%d+)Mod(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('Mod',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-database:sadd(bot_id..'Mod:User'..data.chat_id_, userid)
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*√ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
-if Text and Text:match("^(%d+)Special(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('Special',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-database:sadd(bot_id..'Special:User'..data.chat_id_, userid)
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*√ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
-if Text and Text:match("^(%d+)unUpS(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('unUpS',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-Ba = " ✔"
-else
-Ba = "❌"
-end
-if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-Co = " ✔"
-else
-Co = "❌"
-end
-if database:sismember(bot_id..'Manager'..Chat_id,userid) then
-Ma = " ✔"
-else
-Ma = "❌"
-end
-if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-Mo = " ✔"
-else
-Mo = "❌"
-end
-if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-Sp = " ✔"
-else
-Sp = "❌"
-end
-if CoSu (data) then
-datainline = {
-{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif BasicConstructor(data) then
-datainline = {
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Constructor(data) then
-datainline = {
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Manager(data) then
-datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Mod(data) then
-datainline = {
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-end
-bb = {} 
-bb.inline_keyboard = datainline
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه √ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
-return false
-end
-if Text and Text:match("^(%d+)unBasic(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('unBasic',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-database:srem(bot_id..'Basic:Constructor'..Chat_id,userid)
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
-Ba = "❌"
-else
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعــل هــو ليــس منشــئ اساســي ❌").."&show_alert=true")
-Ba = "❌"
-end
-if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-Co = " ✔"
-else
-Co = "❌"
-end
-if database:sismember(bot_id..'Manager'..Chat_id,userid) then
-Ma = " ✔"
-else
-Ma = "❌"
-end
-if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-Mo = " ✔"
-else
-Mo = "❌"
-end
-if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-Sp = " ✔"
-else
-Sp = "❌"
-end
-bb = {} 
-bb.inline_keyboard = {
-{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه √ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
-return false
-end
-if Text and Text:match("^(%d+)unConstructor(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('unConstructor',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-database:srem(bot_id..'Constructor'..Chat_id,userid)
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
-Co = "❌"
-else
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعل هو ليس بمنشئ ❌").."&show_alert=true")
-Co = "❌"
-end
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-Ba = " ✔"
-else
-Ba = "❌"
-end
-if database:sismember(bot_id..'Manager'..Chat_id,userid) then
-Ma = " ✔"
-else
-Ma = "❌"
-end
-if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-Mo = " ✔"
-else
-Mo = "❌"
-end
-if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-Sp = " ✔"
-else
-Sp = "❌"
-end
-if CoSu (data) then
-datainline = {
-{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif BasicConstructor(data) then
-datainline = {
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Constructor(data) then
-datainline = {
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Manager(data) then
-datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Mod(data) then
-datainline = {
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-end
-bb = {} 
-bb.inline_keyboard = datainline
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه √ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
-return false
-end
-if Text and Text:match("^(%d+)unManager(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('unManager',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-if database:sismember(bot_id..'Manager'..Chat_id,userid) then
-database:srem(bot_id..'Manager'..Chat_id,userid)
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
-Ma = "❌"
-else
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعل هو ليس بمدير ❌").."&show_alert=true")
-Ma = "❌"
-end
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-Ba = " ✔"
-else
-Ba = "❌"
-end
-if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-Co = " ✔"
-else
-Co = "❌"
-end
-if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-Mo = " ✔"
-else
-Mo = "❌"
-end
-if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-Sp = " ✔"
-else
-Sp = "❌"
-end
-if CoSu (data) then
-datainline = {
-{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif BasicConstructor(data) then
-datainline = {
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Constructor(data) then
-datainline = {
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Manager(data) then
-datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Mod(data) then
-datainline = {
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-end
-bb = {} 
-bb.inline_keyboard = datainline
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه √ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
-return false
-end
-if Text and Text:match("^(%d+)unmod(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('unmod',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-database:srem(bot_id..'Mod:User'..Chat_id,userid)
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
-Mo = "❌"
-else
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعل هو ليس بأدمن ❌").."&show_alert=true")
-Mo = "❌"
-end
-if database:sismember(bot_id..'Manager'..Chat_id,userid) then
-Ma = " ✔"
-else
-Ma = "❌"
-end
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-Ba = " ✔"
-else
-Ba = "❌"
-end
-if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-Co = " ✔"
-else
-Co = "❌"
-end
-if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-Sp = " ✔"
-else
-Sp = "❌"
-end
-if CoSu (data) then
-datainline = {
-{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif BasicConstructor(data) then
-datainline = {
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Constructor(data) then
-datainline = {
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Manager(data) then
-datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Mod(data) then
-datainline = {
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-end
-bb = {} 
-bb.inline_keyboard = datainline
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه √ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
-return false
-end
-if Text and Text:match("^(%d+)unSpecial(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('unSpecial',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
-database:srem(bot_id..'Special:User'..Chat_id,userid)
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
-Sp = "❌"
-else
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعــل هو ليــس مميــز ❌").."&show_alert=true")
-Sp = "❌"
-end
-if database:sismember(bot_id..'Manager'..Chat_id,userid) then
-Ma = " ✔"
-else
-Ma = "❌"
-end
-if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
-Ba = " ✔"
-else
-Ba = "❌"
-end
-if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
-Co = " ✔"
-else
-Co = "❌"
-end
-if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
-Mo = " ✔"
-else
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعــل هــو ليــس ادمــن ❌").."&show_alert=true")
-Mo = "❌"
-end
-if CoSu (data) then
-datainline = {
-{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif BasicConstructor(data) then
-datainline = {
-{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Constructor(data) then
-datainline = {
-{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Manager(data) then
-datainline = {
-{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-elseif Mod(data) then
-datainline = {
-{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '√ 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂', url="t.me/V_I_K_I_N_G_1"}},
-}
-end
-bb = {} 
-bb.inline_keyboard = datainline
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامــه (✔) تعنــي ان الشخــص لا يمتلــك رتبــه.')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
-return false
-end
-if Text and Text:match("^(%d+)Bbk(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('Bbk',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text ='√  حظر',callback_data=data.sender_user_id_.."been"..userid},{text ='√  الغاء حظر',callback_data=data.sender_user_id_.."unbeen"..userid}},
-{{text ='√  كتم',callback_data=data.sender_user_id_.."Mut"..userid},{text ='√  الغاء كتم',callback_data=data.sender_user_id_.."unMut"..userid}},
-{{text ='√  تقييد',callback_data=data.sender_user_id_.."restrict"..userid},{text ='√  الغاء تقييد',callback_data=data.sender_user_id_.."unrestrict"..userid}},
-{{text ='√  رفع رتبه',callback_data=data.sender_user_id_.."UpS"..userid},{text ='√  تنزيل رتبه',callback_data=data.sender_user_id_.."unUpS"..userid}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("• مـرحبـا بـك فـي قائـمه التحكم في العضـو فقط اضغط علي الامر √ ⇓ .")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
-if Text and Text:match("^(%d+)DelLsta(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('DelLsta',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText = '√︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
+local text = 'تم تقيد العضو'
+https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..Chat_id.."&user_id="..userid.."&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(text)..'&message_id='..msg_idd) 
 end
 
-if Text == '/help1' then
+
+
+
+
+if Text and Text:match("^/t7kmrtb1 (.*)$") then
+local userid = Text:match("^/t7kmrtb1 (.*)$")
 if not Mod(data) then
-local notText = '✘ عذرا الاوامر هذه لا تخصك'
+local notText = '✘ يجب ان تكون ادمن للضغط هنا'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
+end
+local Teext = 'رتبته الان ('..Rutba(userid,Chat_id)..') ماذا ستفعل به 🙂'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'تنزيل مطور ثانوي', callback_data="/t7kmrtb1_1 "..userid},
+},
+{
+{text = 'تنزيل مطور', callback_data="/t7kmrtb1_2 "..userid},
+},
+{
+{text = 'تنزيل مالك', callback_data="/t7kmrtb1_3 "..userid},
+},
+{
+{text = 'تنزيل منشئ اساسي', callback_data="/t7kmrtb1_4 "..userid},
+},
+{
+{text = 'تنزيل منشئ', callback_data="/t7kmrtb1_5 "..userid},
+},
+{
+{text = 'تنزيل مدير', callback_data="/t7kmrtb1_6 "..userid},
+},
+{
+{text = 'تنزيل ادمن', callback_data="/t7kmrtb1_7 "..userid},
+},
+{
+{text = 'تنزيل مميز', callback_data="/t7kmrtb1_8 "..userid},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+
+if Text and Text:match("^/t7kmrtb2 (.*)$") then
+local userid = Text:match("^/t7kmrtb2 (.*)$")
+if not Mod(data) then
+local notText = '✘ يجب ان تكون ادمن للضغط هنا'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+local Teext = 'رتبته الان ('..Rutba(userid,Chat_id)..') ماذا ستفعل به 🙂'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'رفع مطور ثانوي', callback_data="/t7kmrtb2_1 "..userid},
+},
+{
+{text = 'رفع مطور', callback_data="/t7kmrtb2_2 "..userid},
+},
+{
+{text = 'رفع مالك', callback_data="/t7kmrtb2_3 "..userid},
+},
+{
+{text = 'رفع منشئ اساسي', callback_data="/t7kmrtb2_4 "..userid},
+},
+{
+{text = 'رفع منشئ', callback_data="/t7kmrtb2_5 "..userid},
+},
+{
+{text = 'رفع مدير', callback_data="/t7kmrtb2_6 "..userid},
+},
+{
+{text = 'رفع ادمن', callback_data="/t7kmrtb2_7 "..userid},
+},
+{
+{text = 'رفع مميز', callback_data="/t7kmrtb2_8 "..userid},
+},
+}
+return https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Teext)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 end
 local Teext =[[
 اوامر حماية المجموعه ⇊
