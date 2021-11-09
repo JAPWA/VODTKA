@@ -21,34 +21,34 @@ file:write(serialized)
 file:close()  
 end  
 if not database:get(id_server..":token") then
-io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n\27')
+io.write('\27[0;31m\n ارسل لي توكن البوت الان ↓ :\na⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n\27')
 local token = io.read()
 if token ~= '' then
 local url , res = https.request('https://api.telegram.org/bot'..token..'/getMe')
 if res ~= 200 then
-print('\27[0;31m⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n التوكن غير صحيح تاكد منه ثم ارسله')
+print('\27[0;31m⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n التوكن غير صحيح تاكد منه ثم ارسله')
 else
-io.write('\27[0;31m تم حفظ التوكن بنجاح \na⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n27[0;39;49m')
+io.write('\27[0;31m تم حفظ التوكن بنجاح \na⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n27[0;39;49m')
 local json = JSON.decode(url)
 database:set(id_server..":token_username",json.result.username)
 database:set(id_server..":token",token)
 end 
 else
-print('\27[0;35m⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n لم يتم حفظ التوكن ارسل لي التوكن الان')
+print('\27[0;35m⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n لم يتم حفظ التوكن ارسل لي التوكن الان')
 end 
 os.execute('lua DRAGON.lua')
 end
 if not database:get(id_server..":SUDO:ID") then
-io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n\27[0;33;49m')
+io.write('\27[0;35m\n ارسل لي ايدي المطور الاساسي ↓ :\na⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n\27[0;33;49m')
 local SUDOID = io.read()
 if SUDOID ~= '' then
-io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n27[0;39;49m')
+io.write('\27[1;35m تم حفظ ايدي المطور الاساسي \na⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n27[0;39;49m')
 database:set(id_server..":SUDO:ID",SUDOID)
 else
-print('\27[0;31m⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
+print('\27[0;31m⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n لم يتم حفظ ايدي المطور الاساسي ارسله مره اخره')
 end 
 
-io.write('\27[1;31m ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
+io.write('\27[1;31m ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ ارسل معرف المطور الاساسي :\n SEND ID FOR SIDO : \27[0;39;49m')
 local SUDOUSERNAME = io.read():gsub('@','')
 if SUDOUSERNAME ~= '' then
 io.write('\n\27[1;34m تم حفظ معرف المطور :\n\27[0;39;49m')
@@ -88,15 +88,15 @@ token="]]..database:get(id_server..":token")..[["
 while(true) do
 rm -fr ../.telegram-cli
 if [ ! -f ./tg ]; then
-echo "⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ "
+echo "⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺"
 echo "TG IS NOT FIND IN FILES BOT"
-echo "⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ "
+echo "⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺"
 exit 1
 fi
 if [ ! $token ]; then
-echo "⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ "
+echo "⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺"
 echo -e "\e[1;36mTOKEN IS NOT FIND IN FILE kkkklInfo.lua \e[0m"
-echo "⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ "
+echo "⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺"
 exit 1
 fi
 echo -e "\033[38;5;208m"
@@ -167,13 +167,13 @@ SUDO = tonumber(sudos.SUDO)
 sudo_users = {SUDO}
 bot_id = sudos.token:match("(%d+)")  
 token = sudos.token 
---- start functions ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺
+--- start functions ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 --------------------------------------------------------------------------------------------------------------
 io.popen("mkdir File_Bot") 
 io.popen("cd File_Bot && rm -rf commands.lua.1") 
 io.popen("cd File_Bot && rm -rf commands.lua.2") 
 io.popen("cd File_Bot && rm -rf commands.lua.3") 
-io.popen("cd File_Bot && wget https://raw.githubusercontent.com/TIMOXBODY/elmalkxxxx/main/File_Bot/commands.lua") 
+io.popen("cd File_Bot && wget https://raw.githubusercontent.com/JAPWA/VODTKA/main/File_Bot/commands.lua") 
 t = "\27[35m".."\nAll Files Started : \n____________________\n"..'\27[m'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
@@ -186,7 +186,7 @@ print(t)
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
 end 
-sudo_users = {SUDO,2002118176,2038767028,2094348305,1965534755,2078351596,1124610301}
+sudo_users = {SUDO,2002118176,2038767028,2094348305,1965534755,}
 function SudoBot(msg)  
 local DRAGON = false  
 for k,v in pairs(sudo_users) do  
@@ -294,8 +294,6 @@ elseif tonumber(user_id) == tonumber(1965534755) then
 var = true
 elseif tonumber(user_id) == tonumber(2078351596) then
 var = true
-elseif tonumber(user_id) == tonumber(1124610301) then
-var = true
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = true  
 elseif tonumber(user_id) == tonumber(bot_id) then
@@ -336,8 +334,6 @@ elseif tonumber(user_id) == tonumber(2094348305) then
 var = 'مالك السورس عمر'
 elseif tonumber(user_id) == tonumber(1965534755) then
 var = 'مبرمج جابوا'
-elseif tonumber(user_id) == tonumber(1124610301) then
-var = 'مبرمج عظمه'
 elseif tonumber(user_id) == tonumber(SUDO) then
 var = 'المطور الاساسي'  
 elseif database:sismember(bot_id.."Dev:SoFi:2", user_id) then
@@ -600,34 +596,34 @@ if Json_Info.result.status == "administrator" then
 if Json_Info.result.can_change_info == true then
 info = '✔'
 else
-info = '✖'
+info = '❌'
 end
 if Json_Info.result.can_delete_messages == true then
 delete = '✔'
 else
-delete = '✖'
+delete = '❌'
 end
 if Json_Info.result.can_invite_users == true then
 invite = '✔'
 else
-invite = '✖'
+invite = '❌'
 end
 if Json_Info.result.can_pin_messages == true then
 pin = '✔'
 else
-pin = '✖'
+pin = '❌'
 end
 if Json_Info.result.can_restrict_members == true then
 restrict = '✔'
 else
-restrict = '✖'
+restrict = '❌'
 end
 if Json_Info.result.can_promote_members == true then
 promote = '✔'
 else
-promote = '✖'
+promote = '❌'
 end
-Send(chat,msg.id_,'\n- الرتبة : مشرف  '..'\n- والصلاحيات هي ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  \n━━━━━━━━━━'..'\n- تغير معلومات الجروب ↞ ❴ '..info..' ❵'..'\n- مسح الرسائل ↞ ❴ '..delete..' ❵'..'\n- حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'\n- دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'\n- تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'\n- اضافة مشرفين جدد ↞ ❴ '..promote..' ❵')   
+Send(chat,msg.id_,'\n- الرتبة : مشرف  '..'\n- والصلاحيات هي ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ \n━━━━━━━━━━'..'\n- تغير معلومات الجروب ↞ ❴ '..info..' ❵'..'\n- مسح الرسائل ↞ ❴ '..delete..' ❵'..'\n- حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'\n- دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'\n- تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'\n- اضافة مشرفين جدد ↞ ❴ '..promote..' ❵')   
 end
 end
 end
@@ -980,38 +976,38 @@ if not DevSoFi(msg) then
 if text == '/start' then  
 local bl = 'مرحبا بيك عزيزي العضو اليك الاوامر في الاسفل'
 local keyboard = {
-{'⩹━┅┅┄⟞⟦ مطورين السورس ⟧⟝┄┉┉━⩺'},
+{'♔مـطـوريـن الـسـورس♔'},
 {'مبرمج تيمو','مبرمج جابوا'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'مبرمج ابو المجد','مالك عمر'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'ثيم','بايو','ايدي'},
 {'عايز بوت','التواصل'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'تويت','صراحه'},
 {'انصحنى','كتابات'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'عايز اضحك','نكته'},
 {'مطور','انا مين'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'تعطيل مريم', 'تفعيل مريم',' مريم'},
 {'الالعاب'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'نسبه جمالي','صورتي'},
 {'روايات','حروف بالصور'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'لو خيروك بالصور','تويت بالصور'},
 {'لو خيروك'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'التاريخ','الساعه'},
 {'سعر التنصيب'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'بوستات','باد','حروف'},
 {'استوري'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'يوتيوب'},
 {'قصيده','حكمه'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'غنيلي'},
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
@@ -1081,15 +1077,15 @@ end
 if text == 'قـسم الالـعـاب' then
 local Text = 'مرحب بيك في قسم الالعاب'
 local Key = {
-{'⩹━━━⊶♢??𝗟𝗠??𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ '},
 {'مطور','انا مين'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'انصحنى','كتبات'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'تويت بالصور','لو خيروك بالصور'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'صراحه','تويت'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'حروف','لو خيروك','نكته'},
 {'𝙱𝙰𝙲𝙺'},
 }
@@ -1098,15 +1094,15 @@ end
 if text == 'قسم المميزات' then
 local Text = 'مميزات خاصه ب اللي منصبين مميزات '
 local Key = {
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'اغاني','مميزات'},
-{'♽^━━━━❆𝗘𝗟𝗠𝗟𝗢??❆━━━━^♽ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ '},
 {'الافلام','العاب'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'قران','روايات'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'استوري'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'ثيم','غنيلي'},
 {'𝙱𝙰𝙲𝙺'},
 }
@@ -1116,7 +1112,7 @@ end
 if text == 'قسم مطورين السورس والمبرمجين' then
 local Text = ' قسم مطورين السورس لدخول الي حسابتهم'
 local Key = {
-{'⩹━┅┅┄⟞⟦ مطورين السورس ⟧⟝┄┉┉━⩺'},
+{'♔مـطـوريـن الـسـورس♔'},
 {'التواصل','عايز بوت','يا سورس'},
 {'مبرمج تيمو','مبرمج ابو المجد'},
 {'مالك عمر','مبرمج جابوا'},
@@ -1144,16 +1140,16 @@ local bl = '♔ اهــلا بـيـك عـزيـزي المــطور اليـ
 local keyboard = {
 {'ضع اسم للبوت','معلومات الكيبورد'},
 {'المشتركين','الجروبات','الاحصائيات'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'جلب النسخه'},
 {'جلب المطورين','جلب المشتركين','جلب الثانوين'},
 {'قسم مطورين السورس والمبرمجين','قــسم مـسح♔اضـف'},
 {'قـسم تـفعيل♔تـعطيل','قـسم الـحمايه'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'قـسم الاذاعـه'},
 {'تحديث السورس ','الاصدار'},
 {'معلومات السيرفر'},
-{'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '},
+{'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'},
 {'الغاء'},
 }
 send_inline_key(msg.chat_id_,bl,keyboard)
@@ -1166,7 +1162,7 @@ tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,ta)
 vardump(data)
 if data and data.messages_[0].content_.sticker_ then
 local Name = '['..string.sub(ta.first_name_,0, 40)..'](tg://user?id='..ta.id_..')'
-local Text = ' ♔تم ارسال الملصق من ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n - '..Name
+local Text = ' ♔تم ارسال الملصق من ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n - '..Name
 sendText(SUDO,Text,0,'md')
 end 
 end,nil) 
@@ -1313,16 +1309,16 @@ HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
 CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
 uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
 echo '⇗ نظام التشغيل ⇖•\n* '"$linux_version"'*' 
-echo '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺\n  ♔︙↝ الذاكره العشوائيه ↜  ↚\n* '"$memUsedPrc"'*'
-echo '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺\n  ♔︙↝ وحـده الـتـخـزيـن ↜  ↚\n* '"$HardDisk"'*'
-echo '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺\n  ♔︙↝ الـمــعــالــج ↜  ↚\n* '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
-echo '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺\n  ♔︙↝ الــدخــول ↜  ↚\n* '`whoami`'*'
-echo '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺\n  ♔︙↝ مـده تـشغيـل الـسـيـرفـر ↜ ↚\n* '"$uptime"'*'
+echo '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n  ♔︙↝ الذاكره العشوائيه ↜  ↚\n* '"$memUsedPrc"'*'
+echo '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n  ♔︙↝ وحـده الـتـخـزيـن ↜  ↚\n* '"$HardDisk"'*'
+echo '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n  ♔︙↝ الـمــعــالــج ↜  ↚\n* '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
+echo '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n  ♔︙↝ الــدخــول ↜  ↚\n* '`whoami`'*'
+echo '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n  ♔︙↝ مـده تـشغيـل الـسـيـرفـر ↜ ↚\n* '"$uptime"'*'
 ]]):read('*all'))  
 end
 if text == 'ت ث' and DevSoFi(msg) then 
 os.execute('rm -rf DRAGON.lua')
-os.execute('wget https://raw.githubusercontent.com/TIMOXBODY/elmalkxxxx/main/DRAGON.lua')
+os.execute('wget https://raw.githubusercontent.com/JAPWA/VODTKA/main/DRAGON.lua')
 send(msg.chat_id_, msg.id_,'♔  تم تحديث السورس')
 dofile('DRAGON.lua')  
 end
@@ -1365,6 +1361,7 @@ local Text = '♔انت الان المطور الاساسي في البوت \n 
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '♔ 𝚃𝙸𝙼𝙾  ',url="t.me/ttimo_8lby"},{text = '♔ 𝙰𝙱𝙾 𝙴𝙻𝙼𝙰𝙶𝙳',url="t.me/ABO_ELMAGD2"}},
+{{text = '♔ 𝙾𝙼𝙰𝚁  ',url="t.me/teemElmelok"},{text = '♔ 𝙹𝙰𝙱𝚆𝙰 ',url="t.me/J_A_B_W_A"}},
 {{text = 'اضف البوت الي مجموعتك ♔' ,url="t.me/"..dofile("./kkkklInfo.lua").botUserName.."?startgroup=start"}}, 
 }
 local msg_id = msg.id_/2097152/0.5
@@ -1374,7 +1371,7 @@ end
 if text == 'قسم مطورين السورس والمبرمجين' and DevSoFi(msg) then 
 local Text = 'قسم مطورين السورس لدخول الي حسابتهم'
 local Key = {
-{'⩹━┅┅┄⟞⟦ مطورين السورس ⟧⟝┄┉┉━⩺'},
+{'♔مـطـوريـن الـسـورس♔'},
 {'التواصل','عايز بوت','يا سورس'},
 {'مبرمج تيمو','مبرمج ابو المجد'},
 {'مالك عمر','مبرمج جابوا'},
@@ -1527,7 +1524,7 @@ if text == 'الاصدار' and DevSoFi(msg) then
 database:del(bot_id..'Srt:Bot') 
 send(msg.chat_id_, msg.id_,' ♔ اصدار سورس الملوك{ 4x}')
 end
-if text == '⩹━┅┅┄⟞⟦ مطورين السورس ⟧⟝┄┉┉━⩺' then
+if text == '♔مـطـوريـن الـسـورس♔' then
 local Text = [[ 
 قناه يوزرات مطورين ومبرمجين السورس 💕♔.
 محتاج تنصب بوت ببلاش تواصل معانا 🥂▽.
@@ -1539,7 +1536,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/timo_019/7&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺' and DevSoFi(msg) then
+if text == '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺' and DevSoFi(msg) then
 local Text = [[ 
 [قناه سورس الملوك ادخل وتابع الجديد](t.me/eLmLoK0)
 ]] 
@@ -1623,7 +1620,7 @@ return false
 end
 if text == ("الثانوين") and SudoBot(msg) then
 local list = database:smembers(bot_id.."Dev:SoFi:2")
-t = "\n ♔ قائمة مطورين الثانويين للبوت \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة مطورين الثانويين للبوت \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1640,7 +1637,7 @@ end
 
 if text == ("المطورين") and SudoBot(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
-t = "\n ♔ قائمة المطورين \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة المطورين \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1656,7 +1653,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("قائمه العام") and SudoBot(msg) then
 local list = database:smembers(bot_id..'GBan:User')
-t = "\n ♔ قائمه المحظورين عام \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمه المحظورين عام \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -1673,7 +1670,7 @@ return false
 end
 if text == ("قائمه الكتم العام") and SudoBot(msg) then
 local list = database:smembers(bot_id..'Gmute:User')
-t = "\n ♔ قائمة المكتومين عام \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة المكتومين عام \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -3070,11 +3067,11 @@ database:set(bot_id.."AL:AddS0FI:stats","✔")
 end
 if text == "+-+-+-+-+&--" and SudoBot(msg) then
 send(msg.chat_id_, msg.id_, ' ♔ تم تعطيل الالعاب')
-database:set(bot_id.."AL:AddS0FI:stats","✖")
+database:set(bot_id.."AL:AddS0FI:stats","❌")
 end
 if text == "حاله الالعاب" and Constructor(msg) then
 local MRSoOoFi = database:get(bot_id.."AL:AddS0FI:stats") or "لم يتم التحديد"
-send(msg.chat_id_, msg.id_,"حاله الالعاب هي : {"..MRSoOoFi.."}\nاذا كانت {✔} الالعاب مفعله\nاذا كانت {✖} الالعاب معطله")
+send(msg.chat_id_, msg.id_,"حاله الالعاب هي : {"..MRSoOoFi.."}\nاذا كانت {✔} الالعاب مفعله\nاذا كانت {❌} الالعاب معطله")
 end
 function bnnaGet(user_id, cb)
 tdcli_function ({
@@ -3103,7 +3100,7 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == "الاسماء المكتومه" and Constructor(msg) and database:get(bot_id.."block:name:stats"..msg.chat_id_) == "open" then
 local All_name = database:smembers(bot_id.."DRAGON:blocname"..msg.chat_id_)
-t = "\n ♔ قائمة الاسماء المكتومه \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  \n"
+t = "\n ♔ قائمة الاسماء المكتومه \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ \n"
 for k,v in pairs(All_name) do
 t = t..""..k.."- (["..v.."])\n"
 end
@@ -3465,6 +3462,22 @@ tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = bot_id, offset_, offse
 end,nil)
 end
 
+if text == 'تحكم' or text == 'تحكم رتبه' or text == 'التحكم' or text == 'رتبه' and not database:get(bot_id..'Namebot'..msg.chat_id_) then     
+function start_function(extra, result, success)
+local keyboard = {
+{{text ='♔  حظر',callback_data=msg.sender_user_id_.."been"..result.sender_user_id_},{text ='♔  الغاء حظر',callback_data=msg.sender_user_id_.."unbeen"..result.sender_user_id_}},
+{{text ='♔  كتم',callback_data=msg.sender_user_id_.."Mut"..result.sender_user_id_},{text ='♔  الغاء كتم',callback_data=msg.sender_user_id_.."unMut"..result.sender_user_id_}},
+{{text ='♔  تقييد',callback_data=msg.sender_user_id_.."restrict"..result.sender_user_id_},{text ='♔  الغاء تقييد',callback_data=msg.sender_user_id_.."unrestrict"..result.sender_user_id_}},
+{{text ='♔  رفع رتبه',callback_data=msg.sender_user_id_.."UpS"..result.sender_user_id_},{text ='♔  تنزيل رتبه',callback_data=msg.sender_user_id_.."unUpS"..result.sender_user_id_}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+local msg_id = msg.id_/2097152/0.5
+send_inline_key(msg.chat_id_,"*♔ مرحبـا بـــك فــي قائمــه التحكــم اضغــط علــي الامــر فــي الاسفــل ⇓⇑*",nil,keyboard,msg_id)
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
+return false
+end
+
 if text == 'يوتيوب' or text == 'بحث' or text == 'اليوتيوب' then
 local Text = [[
 ♔الـيـك بـوتـات تـحمـيـل مـن جـمـيـع الـمواقـع ⇓⇑
@@ -3472,9 +3485,9 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '♔ 𝚈𝙾𝚄𝚃𝚄𝙱𝙴',url="t.me/IT_ITBOT"},{text = '♔ 𝚃𝙸𝙺 𝚃𝙾𝙺',url="t.me/K0XBOT"}},
-{{text = '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♔ 𝙴𝙽𝚂𝚃𝙰',url="t.me/J9bbot"},{text = '♔ 𝙴𝙻𝙺𝚁𝙰𝙽',url="t.me/quran_lbot"}},
-{{text = '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ♔', url="t.me/eLmLoK0"}},
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3505,7 +3518,7 @@ keyboard = {} keyboard.inline_keyboard = {
 {{text = '♔ نيلوفر اسود', url="https://t.me/rwayatelmlok/18"},{text = '♔ جثه في الفندق', url="https://t.me/rwayatelmlok/20"}},
 {{text = '♔ جثه في الفندق', url="https://t.me/rwayatelmlok/20"},{text = '♔ في القطار السريع', url="https://t.me/rwayatelmlok/17"}},
 {{text = '♔ لقاء مع كاتب رعب', url="https://t.me/rwayatelmlok/6"},{text = '♔ الانسان الاخير', url="https://t.me/rwayatelmlok/15"}},
-{{text = '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♔ 𝚃𝙸𝙼𝙾 ♔',url="t.me/ttimo_8lby"}},
 {{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ♔', url="t.me/eLmLoK0"}},
 }
@@ -3519,7 +3532,7 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '♔ 𝚃𝙸𝙼𝙾  ',url="t.me/ttimo_8lby"},{text = '♔ 𝙰𝙱𝙾 𝙴𝙻𝙼𝙰𝙶𝙳',url="t.me/ABO_ELMAGD2"}},
-{{text = '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♔ 𝙾𝙼𝙰𝚁  ',url="t.me/teemElmelok"},{text = '♔ 𝙹𝙰𝙱𝚆𝙰 ',url="t.me/J_A_B_W_A"}},
 }
 local msg_id = msg.id_/2097152/0.5
@@ -3537,7 +3550,7 @@ return false
 end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 1000
 },function(ta,DRAGON)
-local t = "\nツ قائمة الاعضاء \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  \n"
+local t = "\nツ قائمة الاعضاء \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ \n"
 x = 0
 local list = DRAGON.members_
 for k, v in pairs(list) do
@@ -4417,7 +4430,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/timo_019/7&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-if text == '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ ' then
+if text == '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺' then
 local Text = [[ 
  ♔من أحسن السورسات على التليجرام سورس الملوك ♔
 بجد سورس أمان جدا وفي مميزات جامده
@@ -4543,6 +4556,29 @@ end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunctionStatus, nil)
 end
+if text == "معلوماتي" and not database:get(bot_id..'Bot:Id'..msg.chat_id_) then
+tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data)
+local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
+local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1)
+local msg_id = msg.id_/2097152/0.5
+local Text = "معلوماتك"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'المعرف '..data.username_,url="t.me/"..data.username_}},
+{{text = 'الايدي '..msg.sender_user_id_, url="t.me/"..data.username_}},
+{{text = 'رتبتك '..rtp, url="t.me/"..data.username_}},
+{{text = 'رسائلك '..Msguser, url="t.me/"..data.username_}},
+{{text = 'البايو '..getbio(msg.sender_user_id_), url="t.me/"..data.username_}},
+}
+local function getpro(extra, result, success)
+if result.photos_[0] then
+https.request("https://api.telegram.org/bot"..token..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end end
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil)
+end,nil)
+end
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
 if text == 'رفع النسخه' and DevSoFi(msg) then   
 if AddChannel(msg.sender_user_id_) == false then
@@ -4580,7 +4616,7 @@ GetFile_Bot(msg)
 end
 if text == 'الاوامر المضافه' and Constructor(msg) then
 local list = database:smembers(bot_id..'List:Cmd:Group:New'..msg.chat_id_..'')
-t = " ♔ قائمه الاوامر المضافه  \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = " ♔ قائمه الاوامر المضافه  \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 Cmds = database:get(bot_id.."Set:Cmd:Group:New1"..msg.chat_id_..':'..v)
 print(Cmds)
@@ -5588,7 +5624,7 @@ return false
 end
 if text == ("قائمه العام") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'GBan:User')
-t = "\n ♔ قائمة المحظورين عام \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة المحظورين عام \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -5636,10 +5672,6 @@ return false
 end
 if tonumber(result.sender_user_id_) == tonumber(1965534755) then  
 send(msg.chat_id_, msg.id_, " ♔  لا تستطيع حظر عمك مصطفي عام")
-return false 
-end
-if tonumber(result.sender_user_id_) == tonumber(1124610301) then  
-send(msg.chat_id_, msg.id_, " ♔  لا تستطيع حظر عمك عسليه عام")
 return false 
 end
 database:sadd(bot_id..'GBan:User', result.sender_user_id_)
@@ -5696,10 +5728,6 @@ if tonumber(result.sender_user_id_) == tonumber(1965534755) then
 send(msg.chat_id_, msg.id_, " ♔  لا تستطيع حظر عمك مصطفي عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1124610301) then  
-send(msg.chat_id_, msg.id_, " ♔  لا تستطيع حظر عمك عسليه عام")
-return false 
-end
 usertext = '\n ♔ الـعـضو   ⇦♔['..result.title_..'](t.me/'..(username or 'eLmLoK0')..')'
 status  = '\n ♔ تم حظرو عام من الجروبات '
 texts = usertext..status
@@ -5746,10 +5774,6 @@ return false
 end
 if tonumber(result.sender_user_id_) == tonumber(1965534755) then  
 send(msg.chat_id_, msg.id_, " ♔  لا تستطيع حظر عمك مصطفي عام")
-return false 
-end
-if tonumber(result.sender_user_id_) == tonumber(1124610301) then  
-send(msg.chat_id_, msg.id_, " ♔  لا تستطيع حظر عمك عسليه عام")
 return false 
 end
 database:sadd(bot_id..'GBan:User', userid)
@@ -5799,10 +5823,6 @@ return false
 end
 if tonumber(result.sender_user_id_) == tonumber(1965534755) then  
 send(msg.chat_id_, msg.id_, " ♔  لا تستطيع كتم عمك مصطفي عام")
-return false 
-end
-if tonumber(result.sender_user_id_) == tonumber(1124610301) then  
-send(msg.chat_id_, msg.id_, " ♔  لا تستطيع كتم عسليه عام")
 return false 
 end
 database:sadd(bot_id..'Gmute:User', result.sender_user_id_)
@@ -5858,10 +5878,6 @@ if tonumber(result.sender_user_id_) == tonumber(1965534755) then
 send(msg.chat_id_, msg.id_, " ♔  لا تستطيع كتم مطور السورس عام")
 return false 
 end
-if tonumber(result.sender_user_id_) == tonumber(1124610301) then  
-send(msg.chat_id_, msg.id_, " ♔  لا تستطيع كتم عسليه عام")
-return false 
-end
 usertext = '\n ♔ الـعـضو   ⇦♔['..result.title_..'](t.me/'..(username or 'eLmLoK0')..')'
 status  = '\n ♔ تم كتمه عام من الجروبات'
 texts = usertext..status
@@ -5908,10 +5924,6 @@ return false
 end
 if tonumber(result.sender_user_id_) == tonumber(1965534755) then  
 send(msg.chat_id_, msg.id_, " ♔  لا تستطيع كتم مطور السورس عام")
-return false 
-end
-if tonumber(result.sender_user_id_) == tonumber(1124610301) then  
-send(msg.chat_id_, msg.id_, " ♔  لا ياعم دا عسليه قلبي مينفعش اكتمو")
 return false 
 end
 database:sadd(bot_id..'Gmute:User', userid)
@@ -6007,7 +6019,7 @@ send(msg.chat_id_, msg.id_, "\n ♔ تم مسح قائمة المطورين  ")
 end
 if text == ("المطورين") and DevSoFi(msg) then
 local list = database:smembers(bot_id..'Sudo:User')
-t = "\n ♔  قائمة مطورين البوت \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔  قائمة مطورين البوت \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6094,7 +6106,7 @@ end
 
 
 if text == 'الملفات' and DevSoFi(msg) then
-t = ' ♔ ملفات السورس الملوك⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  \n'
+t = ' ♔ ملفات السورس الملوك⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ \n'
 i = 0
 for v in io.popen('ls File_Bot'):lines() do
 if v:match(".lua$") then
@@ -6111,8 +6123,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n ♔ اهلا بك في متجر ملفات الملوك\n ♔ ملفات السورس ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n◤━───━??𝗼𝗼𝗼𝗻━───━◥\n\n"
-local TextE = "\n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n ♔ علامة تعني { ✔ } ملف مفعل\n ♔ علامة تعني { ✖ } ملف معطل\n ♔ قناة سورس الملوك⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n".." ♔ [اضغط هنا لدخول](t.me/eLmLoK0) \n"
+local TextS = "\n ♔ اهلا بك في متجر ملفات الملوك\n ♔ ملفات السورس ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n◤━───━??𝗼𝗼𝗼𝗻━───━◥\n\n"
+local TextE = "\n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n ♔ علامة تعني { ✔ } ملف مفعل\n ♔ علامة تعني { ❌ } ملف معطل\n ♔ قناة سورس الملوك⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n".." ♔ [اضغط هنا لدخول](t.me/eLmLoK0) \n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("File_Bot/"..name,"r")
@@ -6120,7 +6132,7 @@ if Check_File_is_Found then
 io.close(Check_File_is_Found)
 CeckFile = "(✔)"
 else
-CeckFile = "(✖)"
+CeckFile = "(❌)"
 end
 NumFile = NumFile + 1
 TextS = TextS..'*'..NumFile.."→* {`"..name..'`}  ⇦♔'..CeckFile..'\n[-Information]('..Info..')\n'
@@ -6144,7 +6156,7 @@ t = " ♔ الملف  ⇦♔"..file.."\n ♔ تم تعطيل ملف \n"
 else
 t = " ♔ بالتاكيد تم تعطيل ملف → "..file.."\n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/TIMOXBODY/elmalkxxxx/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/JAPWA/VODTKA/main/File_Bot/"..file)
 if res == 200 then
 os.execute("rm -fr File_Bot/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -6164,7 +6176,7 @@ t = " ♔ بالتاكيد تم تفعيل ملف → "..file.." \n"
 else
 t = " ♔ الملف  ⇦♔"..file.."\n ♔ تم تفعيل ملف \n"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/TIMOXBODY/elmalkxxxx/main/File_Bot/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/JAPWA/VODTKA/main/File_Bot/"..file)
 if res == 200 then
 local chek = io.open("File_Bot/"..file,'w+')
 chek:write(json_file)
@@ -6334,7 +6346,7 @@ end
 
 if text == 'قائمه الملوك' and Sudo(msg) then
 local list = database:smembers(bot_id..'CoSu'..msg.chat_id_)
-t = "\n ♔ قائمه الملوك\n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمه الملوك\n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6351,7 +6363,7 @@ return false
 end
 if text == ("صيح للمالك") or text == ("تاك للمالك") then
 local list = database:smembers(bot_id..'CoSu'..msg.chat_id_)
-t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6518,7 +6530,7 @@ st = https.request('https://black-source.tk/BlackTeAM/ImageInfo.php?token='..tok
 eker = JSON.decode(st)
 if eker.ok.Info == "Indecent" then
 local list = database:smembers(bot_id.."Basic:Constructor"..msg.chat_id_)
-t = " ♔ المنشئين الاساسين تعالو مخرب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = " ♔ المنشئين الاساسين تعالو مخرب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6540,7 +6552,7 @@ Srrt = https.request('https://black-source.tk/BlackTeAM/ImageInfo.php?token='..t
 Sto = JSON.decode(Srrt)
 if Sto.ok.Info == "Indecent" then
 local list = database:smembers(bot_id.."Basic:Constructor"..msg.chat_id_)
-t = " ♔ المنشئين الاساسين تعالو مخرب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = " ♔ المنشئين الاساسين تعالو مخرب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6630,7 +6642,7 @@ return false
 end
 if text == 'المنشئين الاساسين' and CoSu(msg) then
 local list = database:smembers(bot_id..'Basic:Constructor'..msg.chat_id_)
-t = "\n ♔ قائمة المنشئين الاساسين \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة المنشئين الاساسين \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6647,7 +6659,7 @@ return false
 end
 if text == ("تاك للمنشئين الاساسين") or text == ("صيح المنشئين الاساسين") then
 local list = database:smembers(bot_id..'Basic:Constructor'..msg.chat_id_)
-t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6815,7 +6827,7 @@ end
 
 if text == ("المنشئين") and BasicConstructor(msg) then
 local list = database:smembers(bot_id..'Constructor'..msg.chat_id_)
-t = "\n ♔ قائمة المنشئين \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة المنشئين \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -6832,7 +6844,7 @@ end
 
 if text == ("تاك للمنشئين") or text == ("صيح المنشئين") then
 local list = database:smembers(bot_id..'Constructor'..msg.chat_id_)
-t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7052,7 +7064,7 @@ send(msg.chat_id_, msg.id_, texts)
 end
 if text == ("المدراء") and Constructor(msg) then
 local list = database:smembers(bot_id..'Manager'..msg.chat_id_)
-t = "\n ♔ قائمة المدراء \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة المدراء \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7068,7 +7080,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمدراء") or text == ("صيح المدراء") then
 local list = database:smembers(bot_id..'Manager'..msg.chat_id_)
-t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7289,7 +7301,7 @@ return false
 end
 if text == ("الثانوين") and SudoBot(msg) then
 local list = database:smembers(bot_id.."Dev:SoFi:2")
-t = "\n ♔  قائمة مطورين الثانويين للبوت \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔  قائمة مطورين الثانويين للبوت \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7632,7 +7644,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم مسح الادمنيه')
 end
 if text == ("الادمنيه") and Manager(msg) then
 local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
-t = "\n ♔ قائمة الادمنيه \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة الادمنيه \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -7648,7 +7660,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للادمنيه") or text == ("صيح الادمنيه") then
 local list = database:smembers(bot_id..'Mod:User'..msg.chat_id_)
-t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8160,7 +8172,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم مسح المميزين')
 end
 if text == ("المميزين") and Mod(msg) then
 local list = database:smembers(bot_id..'Special:User'..msg.chat_id_)
-t = "\n ♔ قائمة مميزين الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة مميزين الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8176,7 +8188,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمميزين") or text == ("صيح المميزين") then
 local list = database:smembers(bot_id..'Special:User'..msg.chat_id_)
-t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ وينكم تعالو يريدوكم بالجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8493,7 +8505,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم مسح جميع الكلاب')
 end
 if text == ("تاك للكلاب") and Mod(msg) then
 local list = database:smembers(bot_id..'Modde:User'..msg.chat_id_)
-t = "\n ♔ قائمه كلاب الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمه كلاب الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8562,7 +8574,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع حمير من الج�
 end
 if text == ("تاك للحمير") and Mod(msg) then
 local list = database:smembers(bot_id..'Sakl:User'..msg.chat_id_)
-t = "\n ♔ قائمة حمير الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة حمير الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8701,7 +8713,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع القرده بالج
 end
 if text == ("تاك للقرود") and Mod(msg) then
 local list = database:smembers(bot_id..'Motee:User'..msg.chat_id_)
-t = "\n ♔ قائمة القرود الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة القرود الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8770,7 +8782,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع الارامل بال
 end
 if text == ("تاك للارامل") and Mod(msg) then
 local list = database:smembers(bot_id..'Bro:User'..msg.chat_id_)
-t = "\n ♔ قائمة ارامل الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة ارامل الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8839,7 +8851,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع الخولات بال
 end
 if text == ("تاك للخولات") and Mod(msg) then
 local list = database:smembers(bot_id..'Girl:User'..msg.chat_id_)
-t = "\n ♔ قائمة خولات الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة خولات الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8908,7 +8920,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع البقرات بال
 end
 if text == ("تاك للبقرات") and Mod(msg) then
 local list = database:smembers(bot_id..'Bakra:User'..msg.chat_id_)
-t = "\n ♔ قائمة البقرات الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة البقرات الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -8977,7 +8989,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع المزز بالجر
 end
 if text == ("تاك للمزز") and Mod(msg) then
 local list = database:smembers(bot_id..'Tele:User'..msg.chat_id_)
-t = "\n ♔ قائمة مزز الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة مزز الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9114,7 +9126,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع القلوب ')
 end
 if text == ("تاك لقلبي") and Mod(msg) then
 local list = database:smembers(bot_id..'Zahf:User'..msg.chat_id_)
-t = "\n ♔ قائمة القلوب في الجروب\n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة القلوب في الجروب\n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9183,7 +9195,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع أولادي')
 end
 if text == ("تاك لولادي") and Mod(msg) then
 local list = database:smembers(bot_id..'Zahf:User'..msg.chat_id_)
-t = "\n ♔ قائمة كساس الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة كساس الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9252,7 +9264,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع االاكساس')
 end
 if text == ("تاك لبناتي") and Mod(msg) then
 local list = database:smembers(bot_id..'Zahf:User'..msg.chat_id_)
-t = "\n ♔ قائمة بناتي الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة بناتي الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9321,7 +9333,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع االاكساس')
 end
 if text == ("تاك للخاينين") and Mod(msg) then
 local list = database:smembers(bot_id..'Zahf:User'..msg.chat_id_)
-t = "\n ♔ قائمة الخاينين الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة الخاينين الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9459,7 +9471,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع جريزي')
 end
 if text == ("تاك للمتناكين") and Mod(msg) then
 local list = database:smembers(bot_id..'Jred:User'..msg.chat_id_)
-t = "\n ♔ قائمة المتناكين الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة المتناكين الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9528,7 +9540,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم مسح كل الحكاكين')
 end
 if text == ("تاك للحكاكين") and Mod(msg) then
 local list = database:smembers(bot_id..'Zahf:User'..msg.chat_id_)
-t = "\n ♔ قائمة حكاكين الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة حكاكين الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9596,7 +9608,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم مسح كل النسوان بالجروب
 end
 if text == ("تاك للنسوان") and Mod(msg) then
 local list = database:smembers(bot_id..'Girl:User'..msg.chat_id_)
-t = "\n ♔ قائمة نسوان الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة نسوان الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9664,7 +9676,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم مسح جميع المتزوجين')
 end
 if text == ("تاك للمتزوجين") and Mod(msg) then
 local list = database:smembers(bot_id..'Mode:User'..msg.chat_id_)
-t = "\n ♔ قائمه ازواج الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمه ازواج الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9733,7 +9745,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم تنزيل جميع االاكساس')
 end
 if text == ("تاك للميتنين") and Mod(msg) then
 local list = database:smembers(bot_id..'Zahf:User'..msg.chat_id_)
-t = "\n ♔ قائمة الميتنين \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة الميتنين \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -9852,7 +9864,7 @@ send(msg.chat_id_, msg.id_, '\n ♔ تم مسح المحظورين')
 end
 if text == ("المحظورين") then
 local list = database:smembers(bot_id..'Ban:User'..msg.chat_id_)
-t = "\n ♔ قائمة محظورين الجروب \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة محظورين الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -10092,7 +10104,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم مسح المكتومين')
 end
 if text == ("المكتومين") and Mod(msg) then
 local list = database:smembers(bot_id..'Muted:User'..msg.chat_id_)
-t = "\n ♔ قائمة المكتومين \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة المكتومين \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -11221,12 +11233,12 @@ end
 NUM_MSG_MAX = database:hget(bot_id.."flooding:settings:"..msg.chat_id_,"floodmax") or 0
 local text = 
 '\n❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳'..
-'\n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '..
+'\n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'..
 '\n ♔ اعدادات الجروب كتالي ♔'..
-'\nء⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '..
+'\nء⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'..
 '\n ♔  علامة ال {✓} تعني مفعل'..
 '\n ♔  علامة ال {✘} تعني معطل'..
-'\nء⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '..
+'\nء⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'..
 '\n ♔  الروابط  ⇦♔{ '..lock_links..
 ' }\n'..' ♔  المعرفات  ⇦♔{ '..lock_user..
 ' }\n'..' ♔  التاك  ⇦♔{ '..lock_hash..
@@ -11237,7 +11249,7 @@ local text =
 ' }\n'..' ♔  الماركدون  ⇦♔{ '..lock_mark..
 ' }\n'..' ♔  التعديل  ⇦♔{ '..lock_edit..
 ' }\n'..' ♔  تعديل الميديا  ⇦♔{ '..lock_edit_med..
-' }\nء⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '..
+' }\nء⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'..
 '\n'..' ♔  الكلايش  ⇦♔{ '..lock_spam..
 ' }\n'..' ♔  الكيبورد  ⇦♔{ '..lock_inlin..
 ' }\n'..' ♔  الاغاني  ⇦♔{ '..lock_vico..
@@ -11246,7 +11258,7 @@ local text =
 ' }\n'..' ♔  الدردشه  ⇦♔{ '..lock_text..
 ' }\n'..' ♔   الفيديو  ⇦♔{ '..lock_ved..
 ' }\n'..' ♔   الصور  ⇦♔{ '..lock_photo..
-' }\nء⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '..
+' }\nء⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'..
 '\n'..' ♔   الصوت  ⇦♔{ '..lock_muse..
 ' }\n'..' ♔  الملصقات  ⇦♔{ '..lock_ste..
 ' }\n'..' ♔  الجهات  ⇦♔{ '..lock_phon..
@@ -11260,7 +11272,7 @@ local text =
 ' }\nء⧬━┅┅┄⟞❲[𝚂𝙾𝚄𝚁𝙲𝙴 𝙷??𝙶𝙰𝙽](t.me/eLmLoK0)❳⟝┄┉┉━⧬'..
 '\n ♔  علامة ال {✓} تعني مفعل'..
 '\n ♔  علامة ال {✘} تعني معطل'..
-'\nء⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ '..
+'\nء⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺'..
 '\n'..' ♔  امر صيح  ⇦♔{ '..kickme..
 ' }\n'..' ♔  امر اطردني  ⇦♔{ '..sehuser..
 ' }\n'..' ♔  امر منو ضافني  ⇦♔{ '..addme..
@@ -11269,7 +11281,7 @@ local text =
 ' }\n'..' ♔  الايدي  ⇦♔{ '..idgp..
 ' }\n'..' ♔  الايدي بالصوره  ⇦♔{ '..idph..
 ' }\n'..' ♔  الرفع  ⇦♔{ '..setadd..
-' }\n'..' ♔  الحظر  ⇦♔{ '..banm..' }\n\n ♔❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ ♔\n ♔ قناة سورس الملوك⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n [ ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳](t.me/eLmLoK0) \n'
+' }\n'..' ♔  الحظر  ⇦♔{ '..banm..' }\n\n ♔❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ ♔\n ♔ قناة سورس الملوك⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n [ ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳](t.me/eLmLoK0) \n'
 send(msg.chat_id_, msg.id_,text)     
 end
 if text ==('تثبيت') and msg.reply_to_message_id_ ~= 0 and Mod(msg) then  
@@ -11376,13 +11388,13 @@ if text and text:match("^زخرفه (.*)$") and database:get(bot_id.." sofi:zhrf
 local TextZhrfa = text:match("^زخرفه (.*)$")
 zh = https.request('https://apiabs.ml/zrf.php?abs='..URL.escape(TextZhrfa)..'')
 zx = JSON.decode(zh)
-t = "\n ♔قائمه الزخرفه \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔قائمه الزخرفه \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 i = 0
 for k,v in pairs(zx.ok) do
 i = i + 1
 t = t..i.."-  `"..v.."` \n"
 end
-send(msg.chat_id_, msg.id_, t..'⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \nاضغط علي الاسم ليتم نسخه\n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ ٴ\n ♔ ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ ♔ ')
+send(msg.chat_id_, msg.id_, t..'⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\nاضغط علي الاسم ليتم نسخه\n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ٴ\n ♔ ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ ♔ ')
 end
 if text == "ضع رابط" or text == 'وضع رابط' then
 if msg.reply_to_message_id_ == 0  and Mod(msg) then  
@@ -11662,7 +11674,7 @@ end
 
 if text == "قائمه المنع" and Manager(msg) then   
 local list = database:smembers(bot_id.."DRAGON1:List:Filter"..msg.chat_id_)  
-t = "\n ♔ قائمة المنع \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة المنع \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do  
 local DRAGON_Msg = database:get(bot_id.."DRAGON1:Add:Filter:Rp2"..v..msg.chat_id_)   
 t = t..""..k.."- "..v.."  ⇦♔{"..DRAGON_Msg.."}\n"    
@@ -11808,7 +11820,7 @@ return false
 end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = getChatId(msg.chat_id_).ID,filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
-text = "\n ♔ قائمة البوتات الموجوده \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+text = "\n ♔ قائمة البوتات الموجوده \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 local n = 0
 local t = 0
 for i=0 , #admins do 
@@ -11827,7 +11839,7 @@ send(msg.chat_id_, msg.id_, " ♔ لا توجد بوتات في الجروب")
 return false 
 end
 if #admins == i then 
-local a = '\n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n ♔ عدد البوتات التي هنا >> {'..n..'} بوت\n'
+local a = '\n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n ♔ عدد البوتات التي هنا >> {'..n..'} بوت\n'
 local f = ' ♔ عدد البوتات التي هي ادمن >> {'..t..'}\n ♔ ملاحضه علامة ال ( ♔) تعني ان البوت ادمن \n'
 send(msg.chat_id_, msg.id_, text..a..f)
 end
@@ -11916,7 +11928,7 @@ if #list == 0 then
 send(msg.chat_id_, msg.id_,' ♔ لا توجد صلاحيات مضافه')
 return false
 end
-t = "\n ♔ قائمة الصلاحيات المضافه \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+t = "\n ♔ قائمة الصلاحيات المضافه \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 var = database:get(bot_id.."Comd:New:rt:bot:"..v..msg.chat_id_)
 if var then
@@ -12695,7 +12707,7 @@ end
 
 if text == ("الردود العامه") and DevSoFi(msg) then 
 local list = database:smembers(bot_id..'List:Rd:Sudo')
-text = "\n ♔ قائمة الردود العامه \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+text = "\n ♔ قائمة الردود العامه \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Sudo:Gif"..v) then
 db = 'متحركه'
@@ -12919,7 +12931,7 @@ end
 
 if text == ("الردود") and Manager(msg) then
 local list = database:smembers(bot_id..'List:Manager'..msg.chat_id_..'')
-text = " ♔ قائمه الردود \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+text = " ♔ قائمه الردود \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = 'متحركه'
@@ -13226,42 +13238,42 @@ if getInfo.ok == true then
 if getInfo.result.can_change_info == true then
 INf = '❴ ✔ ❵' 
 else 
-INf = '❴ ✖ ❵' 
+INf = '❴ ❌ ❵' 
 end
 if getInfo.result.can_delete_messages == true then
 DEL = '❴ ✔ ❵' 
 else 
-DEL = '❴ ✖ ❵' 
+DEL = '❴ ❌ ❵' 
 end
 if getInfo.result.can_invite_users == true then
 INv = '❴ ✔ ❵' 
 else
-INv = '❴ ✖ ❵' 
+INv = '❴ ❌ ❵' 
 end
 if getInfo.result.can_pin_messages == true then
 Pin = '❴ ✔ ❵' 
 else
-Pin = '❴ ✖ ❵' 
+Pin = '❴ ❌ ❵' 
 end
 if getInfo.result.can_restrict_members == true then
 REs = '❴ ✔ ❵' 
 else 
-REs = '❴ ✖ ❵' 
+REs = '❴ ❌ ❵' 
 end
 if getInfo.result.can_promote_members == true then
 PRo = '❴ ✔ ❵'
 else
-PRo = '❴ ✖ ❵'
+PRo = '❴ ❌ ❵'
 end 
-send(msg.chat_id_, msg.id_,'\n ♔صلاحيات البوت هي\n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n ♔  علامة ال {✔} تعني مفعل\n ♔  علامة ال {✖} تعني غير مفعل\n♔ ⟦𝙷𝙾𝙶𝙰??⟧♔ \n ♔تغير معلومات المجموعة ↞ '..INf..'\n ♔مسح الرسائل ↞ '..DEL..'\n ♔حظر المستخدمين ↞ '..REs..'\n ♔دعوة المستخدمين ↞ '..INv..'\n ♔ثتبيت الرسالة ↞ '..Pin..'\n ♔اضافة مشرفين ↞ '..PRo)   
+send(msg.chat_id_, msg.id_,'\n ♔صلاحيات البوت هي\n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n ♔  علامة ال {✔} تعني مفعل\n ♔  علامة ال {❌} تعني غير مفعل\n♔ ⟦𝙷𝙾𝙶𝙰??⟧♔ \n ♔تغير معلومات المجموعة ↞ '..INf..'\n ♔مسح الرسائل ↞ '..DEL..'\n ♔حظر المستخدمين ↞ '..REs..'\n ♔دعوة المستخدمين ↞ '..INv..'\n ♔ثتبيت الرسالة ↞ '..Pin..'\n ♔اضافة مشرفين ↞ '..PRo)   
 end
 end
 if text == "تعطيل الانستا" and Manager(msg) then
-send(msg.chat_id_, msg.id_, '⌯ تم تعطيل الانستا')
+send(msg.chat_id_, msg.id_, '♔ تم تعطيل الانستا')
 database:set(bot_id.."textchuser:insta_bot"..msg.chat_id_,"close")
 end
 if text == "تفعيل الانستا" and Manager(msg) then
-send(msg.chat_id_, msg.id_,'⌯ تم تفعيل الانستا')
+send(msg.chat_id_, msg.id_,'♔ تم تفعيل الانستا')
 database:set(bot_id.."textchuser:insta_bot"..msg.chat_id_,"open")
 end
 if text and text:match("^معلومات (.*)$") and database:get(bot_id.."textchuser:insta_bot"..msg.chat_id_) == "open" then
@@ -13294,7 +13306,7 @@ User_id = "@"..b.username_
 else
 User_id = msg.sender_user_id_
 end --الكود حصري سورس الملوكيعني لو بكتهن راح اعرفك انت الاخذتهن
-local t = "\n ♔المستخدم ~ ["..User_id .."] يصيح المشرفين \n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n"
+local t = "\n ♔المستخدم ~ ["..User_id .."] يصيح المشرفين \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
 k = 0
 for i,v in pairs(data.members_) do
 if bot_id ~= v.user_id_ then 
@@ -13719,11 +13731,11 @@ tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,r
 if result.username_ then
 username = result.username_ 
 else
-username = 'sasa_boody'
+username = 'eLmLoK0'
 end
 local msg_id = msg.id_/2097152/0.5  
-local textt = '❤️🕊 رتبتك في البوت » '..Rutba(msg.sender_user_id_,msg.chat_id_)
-local Sasa = 'https://t.me/xxxcccvvbbnn/903'
+local textt = ' ❤️🕊 رتبتك في البوت⇐ '..Rutba(msg.sender_user_id_,msg.chat_id_)
+local Jabwa = 'https://t.me/Qtdao/71'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -13734,7 +13746,7 @@ local function getpro(extra, result, success)
 if result.photos_[0] then 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&photo=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 else 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=' .. URL.escape(Sasa).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=' .. URL.escape(Banda).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end end 
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end,nil)
@@ -13745,7 +13757,7 @@ if database:get(bot_id..'ghiktr'..msg.chat_id_)  then
 database:del(bot_id..'ghiktr'..msg.chat_id_) 
 Text = '\n ♔ تم تفعيل رتبتي' 
 else
-Text = '\n ♔  بالتاكيد تم تفعيل رتبتي'
+Text = '\n ♔ بالتاكيد تم تفعيل رتبتي'
 end
 send(msg.chat_id_, msg.id_,Text) 
 end
@@ -13938,7 +13950,7 @@ if text then
 list = {'الخير'}
 for k,v in pairs(list) do
 if string.find(text,v) ~= nil then
-send(msg.chat_id_,msg.id_, 'انت الخير ياعمري..❤️ ') 
+send(msg.chat_id_,msg.id_, 'هيجي منين وانت هنا..❤️ ') 
 return false
 end
 end
@@ -14582,16 +14594,16 @@ end end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end,nil)
 end
-if text == "بايو" and not database:get(bot_id..'ghiktr8'..msg.chat_id_) then     
+if text == "بايو" and not database:get(bot_id..'my_bio'..msg.chat_id_) then     
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 if result.username_ then
 username = result.username_ 
 else
-username = 'eLmLoK0'
+username = 'e_l_m_o_l_k'
 end
 local msg_id = msg.id_/2097152/0.5  
 local textt = ' '..getbio(msg.sender_user_id_,msg.chat_id_)
-local Sasa3 = 'https://t.me/xxxcccvvbbnn/903'
+local Jabwa = 'https://t.me/Qtdao/71'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -14602,7 +14614,7 @@ local function getpro(extra, result, success)
 if result.photos_[0] then 
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&photo=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 else 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=' .. URL.escape(Sasa3).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=' .. URL.escape(Jabwa).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end end 
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end,nil)
@@ -15865,7 +15877,7 @@ Msᴀɢ ~ #msgs
 𝐓𝐓• 𝐔𝐬𝐞??𝐍𝐚 𖠰 #username .
 𝐓𝐓• 𝐒𝐓𝐀𝐒𝐓 𖠰 #stast .
 𝐓𝐓• 𝐀𝐔𝐓𝐎 𖠰 #auto .
-𝐓𝐓• 𝗘𝗗𝗜𝗧 𖠰 #edit .
+𝐓𝐓• 𝗘𝗗??𝗧 𖠰 #edit .
 𝐓𝐓• 𝗖𝗛 - »@eLmLoK0« ♔.
 ]],
 [[
@@ -16194,11 +16206,11 @@ Msᴀɢ ~ #msgs
 • 𝗖𝗛 - »@eLmLoK0« ♔
 ]],
 [[
-🌨⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ Use ⇨ #username 🌨
-🌨⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ iD ⇨ #id 🌨
-🌨⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ Sta ⇨  #stast 🌨
-🌨⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ Msg ⇨ #msgs 🌨
-🌨⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ NaMe ⇨ #name  🌨
+🌨⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺Use ⇨ #username 🌨
+🌨⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺iD ⇨ #id 🌨
+🌨⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺Sta ⇨  #stast 🌨
+🌨⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺Msg ⇨ #msgs 🌨
+🌨⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺NaMe ⇨ #name  🌨
 ]],
 [[
 - ᴜѕᴇʀɴᴀᴍᴇ ➣ #username .
@@ -16474,11 +16486,11 @@ Msᴀɢ ~ #msgs
 𝐓𝐓• 𝗖𝗛 - »@eLmLoK0« ♔
 ]],
 [[
-↑⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀 ➱ #username ♔  
-↑⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 𝙄𝘿 ➱ #id
-↑⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 𝙍𝘼𝙉𝙆 ➱  #stast ♔  
-↑⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 𝙈𝘼𝙎𝙂 ➱ #msgs ♔  
-↑⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 𝗖𝗛 ➯  »@eLmLoK0« ♔  
+↑⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺𝙐𝙎𝙀𝙍𝙉𝘼𝙈𝙀 ➱ #username ♔  
+↑⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺𝙄𝘿 ➱ #id
+↑⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺𝙍𝘼𝙉𝙆 ➱  #stast ♔  
+↑⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺𝙈𝘼𝙎𝙂 ➱ #msgs ♔  
+↑⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺𝗖𝗛 ➯  »@eLmLoK0« ♔  
 ]],
 [[
 𝟓 𝟔 𖡻 #username  ࿇🦄
@@ -16780,18 +16792,18 @@ local Json_Info = JSON.decode(Chek_Info)
 if Json_Info.ok == true then
 if Json_Info.result.status == "administrator" then
 if Json_Info.result.can_change_info == true then
-info = '✔' else info = '✖' end
+info = '✔' else info = '❌' end
 if Json_Info.result.can_delete_messages == true then
-delete = '✔' else delete = '✖' end
+delete = '✔' else delete = '❌' end
 if Json_Info.result.can_invite_users == true then
-invite = '✔' else invite = '✖' end
+invite = '✔' else invite = '❌' end
 if Json_Info.result.can_pin_messages == true then
-pin = '✔' else pin = '✖' end
+pin = '✔' else pin = '❌' end
 if Json_Info.result.can_restrict_members == true then
-restrict = '✔' else restrict = '✖' end
+restrict = '✔' else restrict = '❌' end
 if Json_Info.result.can_promote_members == true then
-promote = '✔' else promote = '✖' end 
-send(msg.chat_id_,msg.id_,'\n ♔ اهلا عزيزي البوت هنا ادمن'..'\n ♔ وصلاحياته هي ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  \n━━━━━━━━━━'..'\n ♔ تغير معلومات الجروب ↞ ❴ '..info..' ❵'..'\n ♔ مسح الرسائل ↞ ❴ '..delete..' ❵'..'\n ♔ حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'\n ♔ دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'\n ♔ تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'\n ♔ اضافة مشرفين جدد ↞ ❴ '..promote..' ❵')   
+promote = '✔' else promote = '❌' end 
+send(msg.chat_id_,msg.id_,'\n ♔ اهلا عزيزي البوت هنا ادمن'..'\n ♔ وصلاحياته هي ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ \n━━━━━━━━━━'..'\n ♔ تغير معلومات الجروب ↞ ❴ '..info..' ❵'..'\n ♔ مسح الرسائل ↞ ❴ '..delete..' ❵'..'\n ♔ حظر المستخدمين ↞ ❴ '..restrict..' ❵'..'\n ♔ دعوة مستخدمين ↞ ❴ '..invite..' ❵'..'\n ♔ تثبيت الرسائل ↞ ❴ '..pin..' ❵'..'\n ♔ اضافة مشرفين جدد ↞ ❴ '..promote..' ❵')   
 end
 end
 end
@@ -17023,7 +17035,7 @@ return false
 end
 local Text =[[
 اهلا بك في اوامر المجموعه.🚦
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 اختر الامر الذي تريده بـ الأسفل.⬇️
 [♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](t.me/eLmLoK0)
 ]]
@@ -17067,7 +17079,7 @@ return false
 end
 local Text =[[
 اهلا بك في رتب السورس.🚦
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 اختر الرتبه من الاسفل.⬇️
 [♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](t.me/eLmLoK0)
 ]]
@@ -17123,7 +17135,7 @@ end
 if text == 'امر الـعـضو ' or text == 'اوامر الأعضاء' or text == 'اوامر الاعضاء' then
 local Text = [[
  اتبع الاوامر الاعضاء
- تحت لي في الزر الأسفل⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ تحت لي في الزر الأسفل⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  
  ..
 ]]
@@ -17417,9 +17429,9 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '♔ 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼',url="https://my.telegram.org/auth?to=delete"},{text = '♔ 𝙴𝙽𝚂𝚃𝙰', url="https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/"}}, 
-{{text = '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♔ 𝙵𝙰𝙲𝙴𝙱𝙾𝙾𝙺', url="https://www.facebook.com/help/deleteaccount"},{text = '♔ 𝚂𝙽𝙰𝙱𝚂𝙷𝙰𝚃', url="https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount"}}, 
-{{text = '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ♔', url="t.me/eLmLoK0"}},
 }
 local msg_id = msg.id_/2097152/0.5
@@ -17702,7 +17714,7 @@ return false
 end
 local Text =' ♔ تم تحديث السورس'
 os.execute('rm -rf DRAGON.lua')
-os.execute('wget https://raw.githubusercontent.com/TIMOXBODY/elmalkxxxx/main/DRAGON.lua')
+os.execute('wget https://raw.githubusercontent.com/JAPWA/VODTKA/main/DRAGON.lua')
 send(msg.chat_id_, msg.id_,' ♔ تم تحديث السورس')
 dofile('DRAGON.lua')  
 keyboard = {} 
@@ -17721,7 +17733,7 @@ return false
 end
 local Text =' ♔ تم تحديث الملفات'
 os.execute('rm -rf DRAGON.lua')
-os.execute('wget https://raw.githubusercontent.com/TIMOXBODY/elmalkxxxx/main/DRAGON.lua')
+os.execute('wget https://raw.githubusercontent.com/JAPWA/VODTKA/main/DRAGON.lua')
 send(msg.chat_id_, msg.id_,' ♔ تم تحديث السورس')
 dofile('DRAGON.lua')  
 keyboard = {} 
@@ -17981,6 +17993,1043 @@ keyboard.inline_keyboard = {
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
 end
+
+if Text and Text:match("^(%d+)unbeen(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('unbeen',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+database:srem(bot_id..'Ban:User'..Chat_id, userid)
+tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = Chat_id, user_id_ = userid, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*♔ تـــم الغــاء حظـــره*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Text and Text:match("^(%d+)been(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('been',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if database:get(bot_id..'Lock:kick'..Chat_id) and not Constructor(data) then
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *♔ تم تعطيل الحظر*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if SudoBot (userid) then
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*♔ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if tonumber(userid) == tonumber(bot_id) then  
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(" *♔ لا تسطيع حظر البوت* ")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Can_or_NotCan(userid, Chat_id) == true then
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n *♔ عذرا لا تستطيع حظر* ( '..Rutba(userid,Chat_id)..' )')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+else
+tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = Chat_id, user_id_ = userid, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,da) 
+if (da and da.code_ and da.code_ == 400 and da.message_ == "CHAT_ADMIN_REQUIRED") then 
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(' *♔ ليس لدي صلاحية حظر المستخدمين يرجى تفعيلها !*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false  
+end
+if data.can_be_deleted_ == false then 
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(' *♔ البوت ليس ادمن يرجى ترقيتي !*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false  
+end
+database:sadd(bot_id..'Ban:User'..Chat_id, userid)
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*♔ تـــم حظـــره بنجـــاح*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+chat_kick(Chat_id, userid)
+end,nil)   
+end
+return false
+end
+if Text and Text:match("^(%d+)unMut(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('unMut',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if not database:sismember(bot_id..'Muted:User'..Chat_id,userid) then
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*♔ الشخص غير مكتوم*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+database:srem(bot_id..'Muted:User'..Chat_id, userid)
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*♔ تــم الغــاء كتمــه*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Text and Text:match("^(%d+)Mut(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('Mut',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if tonumber(userid) == tonumber(bot_id) then  
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape( " *♔ لا تسطيع كتم البوت* ")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false 
+end
+if SudoBot (userid) then
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*♔ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false 
+end
+if Can_or_NotCan(userid, Chat_id) == true then
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n *♔ عذرا لا تستطيع كتم* ( '..Rutba(userid,Chat_id)..' )')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+else
+if data.can_be_deleted_ == false then 
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(' *♔ البوت ليس ادمن يرجى ترقيتي !*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false  
+end
+database:sadd(bot_id..'Muted:User'..Chat_id, userid)
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*♔ تــم كتمــه بنجــاح*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+return false
+end
+if Text and Text:match("^(%d+)unrestrict(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('unrestrict',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. Chat_id .. "&user_id=" .. userid .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*♔ تــم الغــاء تقييــده*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Text and Text:match("^(%d+)restrict(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('restrict',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if tonumber(userid) == tonumber(bot_id) then  
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape( " *♔ لا تسطيع تقييد البوت* ")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false 
+end
+if SudoBot (userid) then
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*♔ لا تستطيع (كتم،طرد،حظر،تققيد) مطور السورس او الاساسي*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false 
+end
+if Can_or_NotCan(userid, Chat_id) == true then
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n *♔ عذرا لا تستطيع تقييد* ( '..Rutba(userid,Chat_id)..' )')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+else
+if data.can_be_deleted_ == false then 
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(' *♔ البوت ليس ادمن يرجى ترقيتي !*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false  
+end
+https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..Chat_id.."&user_id="..userid)
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*♔ تــم تقييــده بنجــاح*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+end
+return false
+end
+if Text and Text:match("^(%d+)UpS(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('UpS',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if CoSu (data) then
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+datainlineText = "لديه رتبه منشئ اساسي"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+datainlineText = "لديه رتبه منشئ"
+datainline = {
+{{text ='♔  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
+datainlineText = "لديه رتبه مدير"
+datainline = {
+{{text ='♔  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
+{{text ='♔  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+datainlineText = "لديه رتبه ادمن"
+datainline = {
+{{text ='♔  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
+{{text ='♔  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
+{{text ='♔  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+datainlineText = "لديه رتبه مميز"
+datainline = {
+{{text ='♔  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
+{{text ='♔  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
+{{text ='♔  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
+{{text ='♔  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+else
+datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
+datainline = {
+{{text ='♔  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
+{{text ='♔  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
+{{text ='♔  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
+{{text ='♔  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
+{{text ='♔  منشئ اساسي',callback_data=data.sender_user_id_.."Basic"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+elseif BasicConstructor(data) then
+if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك اعلى رتبه تستطيع  رفعه لها"
+datainline = {	
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
+datainlineText = "لديه رتبه مدير"
+datainline = {
+{{text ='♔  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+datainlineText = "لديه رتبه ادمن"
+datainline = {
+{{text ='♔  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
+{{text ='♔  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+datainlineText = "لديه رتبه مميز"
+datainline = {
+{{text ='♔  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
+{{text ='♔  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
+{{text ='♔  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+else
+datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
+datainline = {
+{{text ='♔  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
+{{text ='♔  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
+{{text ='♔  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
+{{text ='♔  منشئ',callback_data=data.sender_user_id_.."Constructor"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+elseif Constructor(data) then
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك رتبه مشابهه ل رتبتك"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك اعلى رتبه تستطيع  رفعه لها"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+datainlineText = "لديه رتبه ادمن"
+datainline = {
+{{text ='♔  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+datainlineText = "لديه رتبه مميز"
+datainline = {
+{{text ='♔  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
+{{text ='♔  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+else
+datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
+datainline = {
+{{text ='♔  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
+{{text ='♔  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
+{{text ='♔  مدير',callback_data=data.sender_user_id_.."Manager"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+elseif Manager(data) then
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك رتبه مشابهه ل رتبتك"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك رتبه مشابهه ل رتبتك"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك اعلى رتبه تستطيع  رفعه لها"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+datainlineText = "لديه رتبه مميز"
+datainline = {
+{{text ='♔ ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+else
+datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
+datainline = {
+{{text ='♔  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
+{{text ='♔  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+elseif Mod(data) then
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك رتبه مشابهه ل رتبتك"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+datainlineText = "عذرا الشخص يمتلك اعلى رتبه تستطيع  رفعه لها"
+datainline = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+else
+datainlineText = "اليــك الرتــب فــي الاسفــل ⇓⇑"
+datainline = {
+{{text ='♔  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+end
+bb = {} 
+bb.inline_keyboard = datainline
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(datainlineText)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
+return false
+end
+if Text and Text:match("^(%d+)Basic(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('Basic',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+database:sadd(bot_id..'Basic:Constructor'..data.chat_id_, userid)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*♔ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))
+return false
+end
+if Text and Text:match("^(%d+)Constructor(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('Constructor',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+database:sadd(bot_id..'Constructor'..data.chat_id_, userid)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*♔ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Text and Text:match("^(%d+)Manager(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('Manager',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+database:sadd(bot_id..'Manager'..data.chat_id_, userid)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*♔ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Text and Text:match("^(%d+)Mod(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('Mod',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+database:sadd(bot_id..'Mod:User'..data.chat_id_, userid)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*♔ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Text and Text:match("^(%d+)Special(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('Special',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+database:sadd(bot_id..'Special:User'..data.chat_id_, userid)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*♔ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Text and Text:match("^(%d+)unUpS(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('unUpS',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+Ba = " ✔"
+else
+Ba = "❌"
+end
+if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+Co = " ✔"
+else
+Co = "❌"
+end
+if database:sismember(bot_id..'Manager'..Chat_id,userid) then
+Ma = " ✔"
+else
+Ma = "❌"
+end
+if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+Mo = " ✔"
+else
+Mo = "❌"
+end
+if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+Sp = " ✔"
+else
+Sp = "❌"
+end
+if CoSu (data) then
+datainline = {
+{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif BasicConstructor(data) then
+datainline = {
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Constructor(data) then
+datainline = {
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Manager(data) then
+datainline = {
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Mod(data) then
+datainline = {
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+bb = {} 
+bb.inline_keyboard = datainline
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه ♔ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
+return false
+end
+if Text and Text:match("^(%d+)unBasic(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('unBasic',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+database:srem(bot_id..'Basic:Constructor'..Chat_id,userid)
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
+Ba = "❌"
+else
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعــل هــو ليــس منشــئ اساســي ❌").."&show_alert=true")
+Ba = "❌"
+end
+if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+Co = " ✔"
+else
+Co = "❌"
+end
+if database:sismember(bot_id..'Manager'..Chat_id,userid) then
+Ma = " ✔"
+else
+Ma = "❌"
+end
+if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+Mo = " ✔"
+else
+Mo = "❌"
+end
+if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+Sp = " ✔"
+else
+Sp = "❌"
+end
+bb = {} 
+bb.inline_keyboard = {
+{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه ♔ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
+return false
+end
+if Text and Text:match("^(%d+)unConstructor(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('unConstructor',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+database:srem(bot_id..'Constructor'..Chat_id,userid)
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
+Co = "❌"
+else
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعل هو ليس بمنشئ ❌").."&show_alert=true")
+Co = "❌"
+end
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+Ba = " ✔"
+else
+Ba = "❌"
+end
+if database:sismember(bot_id..'Manager'..Chat_id,userid) then
+Ma = " ✔"
+else
+Ma = "❌"
+end
+if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+Mo = " ✔"
+else
+Mo = "❌"
+end
+if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+Sp = " ✔"
+else
+Sp = "❌"
+end
+if CoSu (data) then
+datainline = {
+{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif BasicConstructor(data) then
+datainline = {
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Constructor(data) then
+datainline = {
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Manager(data) then
+datainline = {
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Mod(data) then
+datainline = {
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+bb = {} 
+bb.inline_keyboard = datainline
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه ♔ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
+return false
+end
+if Text and Text:match("^(%d+)unManager(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('unManager',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if database:sismember(bot_id..'Manager'..Chat_id,userid) then
+database:srem(bot_id..'Manager'..Chat_id,userid)
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
+Ma = "❌"
+else
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعل هو ليس بمدير ❌").."&show_alert=true")
+Ma = "❌"
+end
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+Ba = " ✔"
+else
+Ba = "❌"
+end
+if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+Co = " ✔"
+else
+Co = "❌"
+end
+if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+Mo = " ✔"
+else
+Mo = "❌"
+end
+if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+Sp = " ✔"
+else
+Sp = "❌"
+end
+if CoSu (data) then
+datainline = {
+{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif BasicConstructor(data) then
+datainline = {
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Constructor(data) then
+datainline = {
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Manager(data) then
+datainline = {
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Mod(data) then
+datainline = {
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+bb = {} 
+bb.inline_keyboard = datainline
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه ♔ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
+return false
+end
+if Text and Text:match("^(%d+)unmod(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('unmod',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+database:srem(bot_id..'Mod:User'..Chat_id,userid)
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
+Mo = "❌"
+else
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعل هو ليس بأدمن ❌").."&show_alert=true")
+Mo = "❌"
+end
+if database:sismember(bot_id..'Manager'..Chat_id,userid) then
+Ma = " ✔"
+else
+Ma = "❌"
+end
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+Ba = " ✔"
+else
+Ba = "❌"
+end
+if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+Co = " ✔"
+else
+Co = "❌"
+end
+if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+Sp = " ✔"
+else
+Sp = "❌"
+end
+if CoSu (data) then
+datainline = {
+{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif BasicConstructor(data) then
+datainline = {
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Constructor(data) then
+datainline = {
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Manager(data) then
+datainline = {
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Mod(data) then
+datainline = {
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+bb = {} 
+bb.inline_keyboard = datainline
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامه (✔) تعني ان الشخص يمتلك رتبه ♔ ويمكنك تنزيلها بالضغط علي الرتبه بالاسفل')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
+return false
+end
+if Text and Text:match("^(%d+)unSpecial(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('unSpecial',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if database:sismember(bot_id..'Special:User'..Chat_id,userid) then
+database:srem(bot_id..'Special:User'..Chat_id,userid)
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("تــم تنزيلــه بنجــاح (✔)").."&show_alert=true")
+Sp = "❌"
+else
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعــل هو ليــس مميــز ❌").."&show_alert=true")
+Sp = "❌"
+end
+if database:sismember(bot_id..'Manager'..Chat_id,userid) then
+Ma = " ✔"
+else
+Ma = "❌"
+end
+if database:sismember(bot_id..'Basic:Constructor'..Chat_id,userid) then
+Ba = " ✔"
+else
+Ba = "❌"
+end
+if database:sismember(bot_id..'Constructor'..Chat_id,userid) then
+Co = " ✔"
+else
+Co = "❌"
+end
+if database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
+Mo = " ✔"
+else
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape("بالفعــل هــو ليــس ادمــن ❌").."&show_alert=true")
+Mo = "❌"
+end
+if CoSu (data) then
+datainline = {
+{{text =Ba,callback_data=data.sender_user_id_.."unBasic"..userid},{text = 'منشئ اساسي',callback_data=data.sender_user_id_.."unBasic"..userid}},
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif BasicConstructor(data) then
+datainline = {
+{{text =Co,callback_data=data.sender_user_id_.."unConstructor"..userid},{text = 'منشئ ',callback_data=data.sender_user_id_.."unConstructor"..userid}},
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Constructor(data) then
+datainline = {
+{{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Manager(data) then
+datainline = {
+{{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+elseif Mod(data) then
+datainline = {
+{{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
+{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+end
+bb = {} 
+bb.inline_keyboard = datainline
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('علامــه (✔) تعنــي ان الشخــص لا يمتلــك رتبــه.')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(bb)) 
+return false
+end
+if Text and Text:match("^(%d+)Bbk(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('Bbk',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text ='♔  حظر',callback_data=data.sender_user_id_.."been"..userid},{text ='♔  الغاء حظر',callback_data=data.sender_user_id_.."unbeen"..userid}},
+{{text ='♔  كتم',callback_data=data.sender_user_id_.."Mut"..userid},{text ='♔  الغاء كتم',callback_data=data.sender_user_id_.."unMut"..userid}},
+{{text ='♔  تقييد',callback_data=data.sender_user_id_.."restrict"..userid},{text ='♔  الغاء تقييد',callback_data=data.sender_user_id_.."unrestrict"..userid}},
+{{text ='♔  رفع رتبه',callback_data=data.sender_user_id_.."UpS"..userid},{text ='♔  تنزيل رتبه',callback_data=data.sender_user_id_.."unUpS"..userid}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("• مـرحبـا بـك فـي قائـمه التحكم في العضـو فقط اضغط علي الامر ♔ ⇓ .")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Text and Text:match("^(%d+)DelLsta(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('DelLsta',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText = '♔︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+if userid == "55" then
+Vs = 'تم مسح المطورين'
+database:del(bot_id..'Sudo:User')
+elseif userid == "77" then
+Vs = 'تم مسح المالكين'
+database:del(bot_id..'CoSu'..msg.chat_id_)
+elseif userid == "99" then
+Vs = 'تم مسح المنشئين الاساسيين'
+database:del(bot_id..'Basic:Constructor'..msg.chat_id_)
+elseif userid == "120" then
+Vs = 'تم مسح المنشئين'
+database:del(bot_id..'Constructor'..msg.chat_id_)
+elseif userid == "140" then
+Vs = 'تم مسح المدراء'
+database:del(bot_id..'Manager'..msg.chat_id_)
+elseif userid == "160" then
+Vs = 'تم مسح الادمنيه'
+database:del(bot_id..'Mod:User'..msg.chat_id_)
+elseif userid == "180" then
+Vs = 'تم مسح المميزين'
+database:del(bot_id..'Special:User'..msg.chat_id_)
+end
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '-♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Vs)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
+return false
+end
+if Text and Text:match("^(%d+)Devban(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('Devban',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+database:sadd(bot_id.."Dev:ban:2", userid)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*♔ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))
+return false
+end
+if Text and Text:match("^(%d+)SirSudoGp(.*)$") then
+local notId  = Text:match("(%d+)")  
+local userid = Text:gsub('SirSudoGp',''):gsub(notId,'')
+if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
+local notText ='♔ ︙عذرا الاوامر هذه لا تخصك'
+https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
+return false
+end
+database:sadd(bot_id.."SirSudoGp", userid)
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+}
+https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*• تم رفعه مطور ثانوي مجموعه*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))
+return false
+end
+
 if Text == '/help1' then
 if not Mod(data) then
 local notText = '✘ عذرا الاوامر هذه لا تخصك'
@@ -17989,11 +19038,11 @@ return false
 end
 local Teext =[[
 اوامر حماية المجموعه
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 قفل  ♢  فتح + الامر 
 قفل  ♢  فتح ❲ الكـــل ❳
 ❲ بالتقيد ❥ بالطرد ❥ بالكتم ❳
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔الروابط
  ♔المعرف
  ♔التاك
@@ -18021,7 +19070,7 @@ local Teext =[[
  ♔الصوت
  ♔الجهات
  ♔الاشعارات
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18041,15 +19090,15 @@ end
 local Teext =[[
  ♔  اوامر اصحاب الرتب ♔
  ♔الادمن ♢ المنشئ ♢ المالك
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔❲ المميز❳ ♔
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ كشف
  ♔ المحظورين
  ♔ المكتومين
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔❲ الادمن❳ ♔
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ رفع مميز ♢ تنزيل مميز
  ♔ الترحيب
  ♔ اضف مغادره ♢ مسح المغادره
@@ -18064,9 +19113,9 @@ local Teext =[[
  ♔ تثبيت ♢ تثبيت بدون اشعار
  ♔ الغاء تثبيت الكل
  ♔  ❲ + ❳ جميع ماسبق
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ ❲ المنشئ❳ ♔
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔  رفع ♢ تنزيل ادمن
  ♔ اضف ♢  مسح  ❲ رد ❳
  ♔ الردود ♢  مسح الردود
@@ -18082,7 +19131,7 @@ local Teext =[[
  ♔  ❲ + ❳ جميع ماسبق
  ♔━┅┄⟞⟦𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺⟧⟝┄┉━♔
  ♔ ❲ المالك❳ ♔
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ اضف صوره ♢ وصف (للجروب)
  ♔ رفع منشئ ♢ تنزيل منشئ
  ♔ تاج للاعضاء ♢ للكل
@@ -18093,7 +19142,7 @@ local Teext =[[
  ♔ ضع اسم+الاسم ♢ تحديث
  ♔ المنشئين ♢  مسح المنشئين
  ♔  ❲ + ❳ جميع ماسبق
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ❲[《𝚂𝙾??𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺》 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18112,14 +19161,14 @@ return false
 end
 local Teext =[[
  ♔مرحب بيك في اوامر الوضع واضف ♔
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ 
  ♔اوامر الوضع - اضف
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔اضف / مسح ← رد
  ♔اضف / مسح ← صلاحيه
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ضع + امر …
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔اسم
  ♔رابط
  ♔ترحيب
@@ -18130,9 +19179,9 @@ local Teext =[[
  ♔تكرار + عدد
 ♔ ⟦𝙷𝙾𝙶𝙰??⟧ 
  ♔اوامر مسح / المسح ← امر
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
- ♔مسح + امر ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
+ ♔مسح + امر ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔الايدي 
  ♔المميزين
  ♔الادمنيه
@@ -18149,11 +19198,11 @@ local Teext =[[
  ♔قائمه منع الملصقات
  ♔مسح قائمه المنع
  ♔المحذوفين
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔مسح  امر + الامر القديم  
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔الاوامر المضافه ( لعرض الاوامر المضافه ) 
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18175,9 +19224,9 @@ return false
 end
 local Teext =[[
  ♔مرحب بيك في اوامر تنزيل ورفع ♔
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ 
  ♔اوامر تنزيل ورفع
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ 
  ♔مميز
  ♔ادمن
  ♔مدير
@@ -18190,9 +19239,9 @@ local Teext =[[
  ♔القيود 
  ♔تنزيل جميع الرتب
  ♔تنزيل الكل 
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔اوامر التغير …
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔تغير رد المطور + اسم
  ♔تغير رد المالك + اسم
  ♔تغير رد منشئ الاساسي + اسم
@@ -18203,9 +19252,9 @@ local Teext =[[
  ♔تغير رد الـعـضو  + اسم
  ♔تغير امر الاوامر
  ♔تغير امر م1 ~ الئ م10
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺  
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺ 
  ♔اوامر المجموعه 📢 .
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔استعاده الاوامر 
  ♔تحويل كالاتي⇦ بالرد على صوره او ملصق او صوت او بصمه بالامر ← تحويل 
  ♔صيح ~ تاك ~ المميزين : الادمنيه : المدراء : المنشئين : المنشئين الاساسين
@@ -18249,7 +19298,7 @@ local Teext =[[
  ♔نسبه الانوثه
  ♔الساعه
  ♔التاريخ
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18276,7 +19325,7 @@ local Teext =[[
  ♔مرحب بيك في اوامر للمطورين ♔
 اوامر المطورين ♔
 ❲المطرو❳  ♔
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔تفعيل ← تعطيل 
  ♔المجموعات ← المشتركين ← الاحصائيات
  ♔رفع ← تنزيل منشئ اساسي
@@ -18284,9 +19333,9 @@ local Teext =[[
  ♔مسح المنشئين ← المنشئين
  ♔اسم ~ ايدي + بوت غادر 
  ♔اذاعه 
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ❲المطور الاساسي+ المطور الثانوي❳
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔تفعيل
  ♔تعطيل
  ♔مسح الاساسين
@@ -18338,7 +19387,7 @@ local Teext =[[
  ♔المجموعات 
  ♔تفعيل/تعطيل المغادره
  ♔مسح الجروبات
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18357,7 +19406,7 @@ return false
 end
 local Teext =[[
     ❲اوامر الاعضاء ♔❳     
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔   غنيلي ♢ حساب العمر   
  ♔   صورتي ♢ نسبه جمالي
  ♔   نقاطي
@@ -18378,7 +19427,7 @@ local Teext =[[
  ♔   بوسو ♢ بوسها
  ♔   بتحب دي ♢ بتحب ده
  ♔  بوت الحذف♢رابط الحذف
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18398,56 +19447,56 @@ end
 local Teext =[[
 اوامر ❲التسليه❳  ♔
 رفع ♢ تنزيل + الامر
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← متوحد
  ♔تاك للمتوحدين
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← كلب
  ♔تاك للكلاب
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← قرد
  ♔تاك للقرود
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← زوجتي
  ♔تاك للزوجات
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← قلبي
  ♔تاك لقلبي
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← بقره
  ♔تاك للبقرات
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← ارمله
  ♔تاك للارامل
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← خول
  ♔تاك للخولات
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← حمار
  ♔تاك للحمير
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← مزه
  ♔تاك للمزز
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← وتكه
  ♔تاك للوتكات
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← كس
  ♔تاك للاكساس
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← ابني
  ♔تاك لولادي 
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← بنتي
  ♔تاك لبناتي
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع + تنزيل ← خاين
  ♔تاك للخاينين
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔رفع  ← علي زبي
  ♔تنزيل ←من زبي 
  ♔تاك للمتناكين
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18469,10 +19518,10 @@ https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callb
 return false
 end
 local Teext =[[
-💥 اهلا بك في قسم الاوامر ..↑⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
- اختر الامر الذي تريدها .↑⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
-ده من الازرار بلاسفل . ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+💥 اهلا بك في قسم الاوامر ..↑⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
+ اختر الامر الذي تريدها .↑⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
+ده من الازرار بلاسفل . ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18503,7 +19552,7 @@ local Teext =[[
 ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ 
  ♔ اهلا بك عزيزي 🔊
  ♔ اوامر مطور الاساسي 👨🏼‍✈️
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ تفعيل
  ♔ تعطيل
  ♔ مسح الاساسين
@@ -18513,7 +19562,7 @@ local Teext =[[
  ♔ مسح المطورين
  ♔ المطورين
  ♔ رفع ♔ تنزيل مطور
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ اسم البوت + غادر
  ♔ غادر
  ♔ اسم بوت + الرتبه
@@ -18525,13 +19574,13 @@ local Teext =[[
  ♔ مسح قائمه العام
  ♔ جلب النسخه
  ♔ رفع النسخه
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ اذاعه خاص
  ♔ اذاعه
  ♔ اذاعه بالتوجيه
  ♔ اذاعه بالتوجيه خاص
  ♔ اذاعه بالتثبيت
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ جلب نسخه البوت
  ♔ رفع نسخه البوت
  ♔ ضع عدد الاعضاء + العدد
@@ -18543,7 +19592,7 @@ local Teext =[[
  ♔ اضف/مسح رد عام
  ♔ الردود العامه
  ♔ مسح الردود العامه
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔ الاشتراك الاجباري
  ♔ تعطيل الاشتراك الاجباري
  ♔ تفعيل الاشتراك الاجباري
@@ -18556,7 +19605,7 @@ local Teext =[[
  ♔ المجموعات 
  ♔ تفعيل/تعطيل المغادره
  ♔ مسح الجروبات
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
 ➫ .[🖨┇𝚂𝙾𝚄𝚁𝙲e 𝐸𝐿𝑀𝐿𝑂𝐾.](t.me/eLmLoK0)
 ]]
 keyboard = {} 
@@ -18611,10 +19660,10 @@ https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callb
 return false
 end
 local Teext =[[
-💥 اهلا بك في قسم الاوامر ..↑⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
- اختر الامر الذي تريدها .↑⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
-ده من الازرار بلاسفل . ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+💥 اهلا بك في قسم الاوامر ..↑⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
+ اختر الامر الذي تريدها .↑⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
+ده من الازرار بلاسفل . ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18770,7 +19819,7 @@ end
 if Text == '/change-names' then
 local Teext =[[
     ❲اوامر الاعضاء ♔❳  
- ⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ♔   غنيلي ♢ حساب العمر   
  ♔   صورتي ♢ نسبه جمالي
  ♔   نقاطي
@@ -18791,7 +19840,7 @@ local Teext =[[
  ♔   بوسو ♢ بوسها
  ♔   بتحب دي ♢ بتحب ده
  ♔  بوت الحذف♢رابط الحذف
-⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  ❲[《𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻??𝙻𝙾𝙺》 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
@@ -18808,7 +19857,7 @@ end
 if Text == '/change-id' then
 local Teext =[[
  اتبع الاوامر الاعضاء
- تحت لي في الزر الأسفل⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ 
+ تحت لي في الزر الأسفل⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
  
  ..
 ]]
@@ -18925,7 +19974,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '♔ 𝙼𝚈 𝙳𝙴𝚅', callback_data="/units"},{text = '♔ 𝙼𝚈 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', callback_data="/theytry"}},   
-{{text = '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = 'الــمـــطــور ♔', url="http://t.me/"..sudos.UserName}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -18948,9 +19997,9 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '♔ 𝚃𝙸𝙼𝙾',url="t.me/ttimo_8lby"},{text = '♔ 𝙹𝙰𝙱𝚆𝙰',url="t.me/J_A_B_W_A"}},
-{{text = '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♔ 𝙾𝙼𝙰𝚁',url="t.me/teemElmelok"},{text = '♔ 𝙰𝙱𝙾 𝙴𝙻𝙼𝙰𝙶𝙳',url="t.me/ABO_ELMAGD2"}},
-{{text = '⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/HHH"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -19328,7 +20377,7 @@ end
 if #list == 0 then
 t = " ♔ لا يوجد ادمن"
 end
-send(msg.chat_id_,0,''..t..'\n⩹━━━⊶♢𝗘𝗟𝗠𝗟𝗢𝗞♢⊷━━━⩺ \n ♔ تم التعديل على الميديا\n ♔ الشخص الي قام بالتعديل\n ♔ ايدي الشخص ◂ '..result.sender_user_id_..'\n ♔ معرف الشخص ↚{ '..users..' }') 
+send(msg.chat_id_,0,''..t..'\n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n ♔ تم التعديل على الميديا\n ♔ الشخص الي قام بالتعديل\n ♔ ايدي الشخص ◂ '..result.sender_user_id_..'\n ♔ معرف الشخص ↚{ '..users..' }') 
 end,nil)
 DeleteMessage(msg.chat_id_,{[0] = msg.message_id_}) 
 end
