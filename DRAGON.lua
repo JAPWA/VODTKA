@@ -3204,7 +3204,7 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == 'تحكم' and DevSoFi(msg) then
+if text == 'تحكم' or text == 'تحكم رتبه' or text == 'التحكم' or text == 'رتبه' and not database:get(bot_id..'Namebot'..msg.chat_id_) then     
 if AddChannel(msg.sender_user_id_) == false then
 local XXx_cLASsIC_xXX = database:get(bot_id..'text:ch:user')
 if XXx_cLASsIC_xXX then
@@ -3239,7 +3239,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
 return false
 end
-if text == 'تحكم رتبه' and DevSoFi(msg) then
+if text == 'تحكم الرتبه' or text == 'تحكم في الرتبه' or text == 'االتحكم' or text == 'رتبهه' and not database:get(bot_id..'Namebot'..msg.chat_id_) then     
 if AddChannel(msg.sender_user_id_) == false then
 local XXx_cLASsIC_xXX = database:get(bot_id..'text:ch:user')
 if XXx_cLASsIC_xXX then
@@ -7242,7 +7242,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("تاك للمنشئين") or text == ("صيح المنشئين") then
 local list = database:smembers(bot_id..'Constructor'..msg.chat_id_)
-t = "\n 🌏 وينكم تعالو يريدوكم بالجروب \n𖣘━┅┄⟞⟦𝚂𝙾🌏𝚁𝙲𝙴 𝚅??𝙺𝙸𝙽𝙶⟧⟝┄┉━𖣘\n"
+t = "\n 🌏 وينكم تعالو يريدوكم بالجروب \n𖣘━┅┄⟞⟦𝚂𝙾🌏𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽𝙶⟧⟝┄┉━𖣘\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -11620,7 +11620,7 @@ return false
 end
 tdcli_function ({ID = "PinChannelMessage",channel_id_ = msg.chat_id_:gsub('-100',''),message_id_ = msg.reply_to_message_id_,disable_notification_ = 1},function(arg,data) 
 if data.ID == "Ok" then
-send(msg.chat_id_, msg.id_," ?? تم تثبيت الرساله")   
+send(msg.chat_id_, msg.id_," 🌏 تم تثبيت الرساله")   
 database:set(bot_id..'Pin:Id:Msg'..msg.chat_id_,msg.reply_to_message_id_)
 elseif data.code_ == 6 then
 send(msg.chat_id_,msg.id_," 🌏 انا لست ادمن هنا يرجى ترقيتي ادمن ثم اعد المحاوله")  
@@ -16683,7 +16683,7 @@ Msᴀɢ ~ #msgs
 • 🦄 | 𝑼𝑬𝑺 : #username ‌‌‏⚚
 • 🦄 | 𝑺𝑻𝑨 : #stast ☥
 • 🦄 | 𝑰𝑫 : #id ‌‌‏♕
-• 🦄 | 𝑴𝑺𝑮 : #msgs 𓆊
+• 🦄 | 𝑴??𝑮 : #msgs 𓆊
 • 🦄 | 𝑾𝒆𝒍𝒄𝒐𝒎𝒆 : ⁞
 • 🦄 | 𝗖𝗛 - ↝@V_I_K_I_N_G_1↜ 🌏
 ]],
