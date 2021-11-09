@@ -4564,11 +4564,11 @@ local msg_id = msg.id_/2097152/0.5
 local Text = "معلوماتك"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'معرفك ♔'..data.username_,url="t.me/"..data.username_}},
-{{text = 'رتبتك ♔'..rtp, url="t.me/"..data.username_}},
-{{text = 'رسائلك ♔'..Msguser, url="t.me/"..data.username_}},
-{{text = 'ايديك ♔'..msg.sender_user_id_, url="t.me/"..data.username_}},
-{{text = 'البايو ♔'..getbio(msg.sender_user_id_), url="t.me/"..data.username_}},
+{{text = '♔ معرفك ⇐'..data.username_,url="t.me/"..data.username_}},
+{{text = '♔ رتبتك ⇐'..rtp, url="t.me/"..data.username_}},
+{{text = '♔ رسائلك ⇐'..Msguser, url="t.me/"..data.username_}},
+{{text = '♔ ايديك ⇐'..msg.sender_user_id_, url="t.me/"..data.username_}},
+{{text = '♔ البايو ⇐'..getbio(msg.sender_user_id_), url="t.me/"..data.username_}},
 }
 local function getpro(extra, result, success)
 if result.photos_[0] then
