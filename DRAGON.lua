@@ -4560,17 +4560,15 @@ if text == "معلوماتي" and not database:get(bot_id..'Bot:Id'..msg.chat_id
 tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data)
 local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
 local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1)
-sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_," ♔ عدد صورك ⇜ "..result.total_count_.." صوره‌‏", msg.id_, msg.id_, "md")
-else
 local msg_id = msg.id_/2097152/0.5
 local Text = "معلوماتك"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'المعرف '..data.username_,url="t.me/"..data.username_}},
-{{text = 'الايدي '..msg.sender_user_id_, url="t.me/"..data.username_}},
-{{text = 'رتبتك '..rtp, url="t.me/"..data.username_}},
-{{text = 'رسائلك '..Msguser, url="t.me/"..data.username_}},
-{{text = 'البايو '..getbio(msg.sender_user_id_), url="t.me/"..data.username_}},
+{{text = 'معرفك ♔'..data.username_,url="t.me/"..data.username_}},
+{{text = 'رتبتك ♔'..rtp, url="t.me/"..data.username_}},
+{{text = 'رسائلك ♔'..Msguser, url="t.me/"..data.username_}},
+{{text = 'ايديك ♔'..msg.sender_user_id_, url="t.me/"..data.username_}},
+{{text = 'البايو ♔'..getbio(msg.sender_user_id_), url="t.me/"..data.username_}},
 }
 local function getpro(extra, result, success)
 if result.photos_[0] then
