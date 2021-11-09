@@ -4579,6 +4579,28 @@ end end
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil)
 end,nil)
 end
+if text == "معلومات الجروب" and not database:get(bot_id..'Bot:Id'..msg.chat_id_) then
+tdcli_function({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data)
+local rtp = Rutba(msg.sender_user_id_,msg.chat_id_)
+local Msguser = tonumber(database:get(bot_id..'Msg_User'..msg.chat_id_..':'..msg.sender_user_id_) or 1)
+local msg_id = msg.id_/2097152/0.5
+local Text = "معلومات الجروب"
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = 'عدد الادمنيه '..data.username_,url="t.me/"..data.username_}},
+{{text = 'عدد المطرودين '..rtp, url="t.me/"..data.username_}},
+{{text = 'عدد رسائل الجروب '..Msguser, url="t.me/"..data.username_}},
+{{text = 'اسم الجروب '..msg.sender_user_id_, url="t.me/"..data.username_}},
+}
+local function getpro(extra, result, success)
+if result.photos_[0] then
+https.request("https://api.telegram.org/bot"..token..'/sendphoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&reply_to_message_id='..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+else
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end end
+tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil)
+end,nil)
+end
 if Chat_Type == 'GroupBot' and ChekAdd(msg.chat_id_) == true then
 if text == 'رفع النسخه' and DevSoFi(msg) then   
 if AddChannel(msg.sender_user_id_) == false then
@@ -14787,22 +14809,6 @@ end
 end 
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, start_function, nil) 
 end
-if text==('معلومات الجروب') and Mod(msg) then  
-if msg.can_be_deleted_ == false then 
-send(msg.chat_id_,msg.id_," ♔ البوت ليس ادمن \n") 
-return false  
-end 
-tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
-tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub('-100','')},function(arg,data) 
-local sofi = ' ♔ عدد الادمنيه : '..data.administrator_count_..
-'\n\n ♔ عدد المطرودين : '..data.kicked_count_..
-'\n\n ♔ عدد الاعضاء : '..data.member_count_..
-'\n\n ♔ عدد رسائل الجروب : '..(msg.id_/2097152/0.5)..
-'\n\n ♔  اسم الجروب : ['..ta.title_..']'
-send(msg.chat_id_, msg.id_, sofi) 
-end,nil)
-end,nil)
-end 
 if text == 'اطردني' or text == 'طردني' and GetChannelMember(msg) then   
 if not database:get(bot_id..'Cick:Me'..msg.chat_id_) then
 if Can_or_NotCan(msg.sender_user_id_, msg.chat_id_) == true then
@@ -18037,7 +18043,7 @@ return false
 end
 if Can_or_NotCan(userid, Chat_id) == true then
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻??𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
 https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n *♔ عذرا لا تستطيع حظر* ( '..Rutba(userid,Chat_id)..' )')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 else
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = Chat_id, user_id_ = userid, status_ = { ID = "ChatMemberStatusKicked" },},function(arg,da) 
