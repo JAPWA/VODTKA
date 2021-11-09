@@ -3204,23 +3204,6 @@ local msg_id = msg.id_/2097152/0.5
 https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
-if text == 'سعر التنصيب' then
-database:del(bot_id..'Srt:Bot') 
-local Text = [[ 
-🌏سعر التنصيب علي سورس فايكينج 
-🌏سعر التنصيب العادي 20جنيه فقط
-🌏للتواصل اتبع الازرار بالاسفل ⇓
-]] 
-keyboard = {}  
-keyboard.inline_keyboard = { 
-{{{text = '𝙏𝙄𝙈𝙊',url="t.me/ttimo_8lby"},{text = '𝘼𝙎𝘼𝙇𝙄𝙔𝘼',url="t.me/AsaliyaEgypt"}},
-{{text = '𝘼𝘽𝙊 𝙀𝙇𝙈𝘼𝙂𝘿 ',url="t.me/ABO_ELMAGD2"}},
-{{text = '𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂 ', url="t.me/V_I_K_I_N_G_1"}},
-} 
-local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. msg.chat_id_ .. '&video=https://t.me/V_I_K_I_N_G_2/107&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-
 if text ==  'جلب الثانوين' then 
 local list = database:smembers(bot_id..'Dev:SoFi:2') 
 local t = '{"users":['   
@@ -16342,7 +16325,7 @@ Msᴀɢ ~ #msgs
  𝚄𝚂𝙴🌏 𓄹𓄼 #username
  𝙸𝙳  𓄹𓄼 #id 
  𝚂𝚃𝙰 𓄹𓄼 #stast 
- 𝙼𝚂??𝚂𓄹𓄼 #msgs
+ 𝙼𝚂𝙶𝚂𓄹𓄼 #msgs
  𝗖𝗛 - ↝@V_I_K_I_N_G_1↜ 🌏
 ]],
 [[
@@ -17962,7 +17945,7 @@ name = string.gsub(name,'🙍‍♂️','🙎‍♂️🙎‍♂️🙎‍♂️
 name = string.gsub(name,'🧖‍♂️','🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♂️🧖‍♀️🧖‍♀️🧖‍♀️🧖‍♀️')
 name = string.gsub(name,'👬','👭👭👭👭👭👬👭👭👭')
 name = string.gsub(name,'👨‍👨‍👧','👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👦👨‍👨‍👧👨‍👨‍👦👨‍👨‍👦')
-name = string.gsub(name,'🕒','🕒🕒🕒🕒🕒??🕓🕒🕒🕒')
+name = string.gsub(name,'🕒','🕒🕒🕒🕒🕒🕒🕓🕒🕒🕒')
 name = string.gsub(name,'🕤','🕥🕥🕥🕥🕥🕤🕥🕥🕥')
 name = string.gsub(name,'⌛️','⏳⏳⏳⏳⏳⏳⌛️⏳⏳')
 name = string.gsub(name,'📅','📆📆📆📆📆📆📅📆📆')
