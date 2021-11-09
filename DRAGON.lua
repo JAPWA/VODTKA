@@ -19438,79 +19438,7 @@ local notText = '√︙عذرا الاوامر هذه لا تخصك'
 https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
 return false
 end
-if userid == "55" then
-Vs = 'تم مسح المطورين'
-database:del(bot_id..'Sudo:User')
-elseif userid == "77" then
-Vs = 'تم مسح المالكين'
-database:del(bot_id..'CoSu'..msg.chat_id_)
-elseif userid == "99" then
-Vs = 'تم مسح المنشئين الاساسيين'
-database:del(bot_id..'Basic:Constructor'..msg.chat_id_)
-elseif userid == "120" then
-Vs = 'تم مسح المنشئين'
-database:del(bot_id..'Constructor'..msg.chat_id_)
-elseif userid == "140" then
-Vs = 'تم مسح المدراء'
-database:del(bot_id..'Manager'..msg.chat_id_)
-elseif userid == "160" then
-Vs = 'تم مسح الادمنيه'
-database:del(bot_id..'Mod:User'..msg.chat_id_)
-elseif userid == "180" then
-Vs = 'تم مسح المميزين'
-database:del(bot_id..'Special:User'..msg.chat_id_)
-end
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '-˹《𝚂𝙾𝚄𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽𝙶》˼', url="t.me/V_I_K_I_N_G_1"}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(Vs)..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
-return false
-end
-if Text and Text:match("^(%d+)Devban(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('Devban',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-database:sadd(bot_id.."Dev:ban:2", userid)
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '˹《𝚂𝙾𝚄𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽𝙶》˼', url="t.me/V_I_K_I_N_G_1"}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*√ تم تنفيذ الامر بنجاح*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))
-return false
-end
-if Text and Text:match("^(%d+)SirSudoGp(.*)$") then
-local notId  = Text:match("(%d+)")  
-local userid = Text:gsub('SirSudoGp',''):gsub(notId,'')
-if tonumber(data.sender_user_id_) ~= tonumber(notId) then  
-local notText ='√ ︙عذرا الاوامر هذه لا تخصك'
-https.request("https://api.telegram.org/bot"..token.."/answerCallbackQuery?callback_query_id="..data.id_.."&text="..URL.escape(notText).."&show_alert=true")
-return false
-end
-database:sadd(bot_id.."SirSudoGp", userid)
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '˹《𝚂𝙾𝚄𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽𝙶》˼', url="t.me/V_I_K_I_N_G_1"}},
-}
-https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*• تم رفعه مطور ثانوي مجموعه*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))
-return false
-end
 
-function tdcli_update_callback(data)  -- clback
-if data.ID == "UpdateChannel" then 
-if data.channel_.status_.ID == "ChatMemberStatusKicked" then 
-database:srem(bot_id..'Chek:Groups','-100'..data.channel_.id_)  
-end
-end
-if data.ID == "UpdateNewCallbackQuery" then
-local Chat_id = data.chat_id_
-local Msg_id = data.message_id_
-local msg_idd = Msg_id/2097152/0.5
-local Text = data.payload_.data_
 if Text == '/help1' then
 if not Mod(data) then
 local notText = '✘ عذرا الاوامر هذه لا تخصك'
@@ -19577,7 +19505,7 @@ local Teext =[[
  🌏 كشف
  🌏 المحظورين
  🌏 المكتومين
- 𖣘━┅┄⟞⟦𝚂𝙾𝚄𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽𝙶⟧⟝┄┉━𖣘
+ 𖣘━┅┄⟞⟦𝚂𝙾𝚄𝚁𝙲𝙴 ??𝙸𝙺𝙸𝙽𝙶⟧⟝┄┉━𖣘
  🌏❲ الادمن❳ ⇊
  𖣘━┅┄⟞⟦𝚅𝙸𝙺𝙸𝙽𝙶⟧⟝┄┉━𖣘
  🌏 رفع مميز ⌁ تنزيل مميز
