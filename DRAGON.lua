@@ -3114,7 +3114,7 @@ local Text = [[
 𖣘━━━⊶♢𝙑𝙄𝙆𝙄𝙉𝙂♢⊷━━━𖣘
 𓆩[𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏𝙊 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂](http://t.me/V_I_K_I_N_G_1)𓆪
 𓆩[𝘿𝙀𝙑 𝙎𝙊𝙐𝙍𝘾𝙀](http://t.me/V_I_K_I_N_G_1)𓆪
-𓆩[𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏?? 𝙎𝙊??𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂](http://t.me/V_I_K_I_N_G_1)𓆪
+𓆩[𝙒𝙀𝙇𝘾𝙊𝙈𝙀 𝙏?? 𝙎𝙊𝙐𝙍𝘾𝙀 𝙑𝙄𝙆𝙄𝙉𝙂](http://t.me/V_I_K_I_N_G_1)𓆪
 𖣘━━━⊶♢𝙑𝙄𝙆𝙄𝙉𝙂♢⊷━━━𖣘
 ]]
 keyboard = {} 
@@ -3168,7 +3168,7 @@ keyboard.inline_keyboard = {
 {{text = '❨𝙏𝙄𝙈𝙊❩', url="t.me/ttimo_8lby"}}, 
 } 
 local msg_id = msg.id_/2097152/0.5 
-https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ttimo_8lby&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 
 if text == 'قناه السورس' then
@@ -3213,7 +3213,8 @@ local Text = [[
 ]]
 keyboard = {}  
 keyboard.inline_keyboard = { 
-{{text = '❨𖣘• ⁽𝙰𝚂𝙰𝙻𝙸𝚈𝙰₎ •𖣘❩', url="t.me/AsaliyaEgypt"}}, 
+{{text = '❨𖣘• 𝘼𝙎𝘼𝙇𝙄𝙔𝘼 •𖣘❩', url="t.me/AsaliyaEgypt"}}, 
+{{text = '❨𖣘• 𝙏𝙄𝙈𝙊 •𖣘❩', url="t.me/ttimo_8lby"}}, 
 {{text = '˹《𝚂𝙾𝚄𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽𝙶》˼',url="t.me/V_I_K_I_N_G_1"}},
 } 
 local msg_id = msg.id_/2097152/0.5 
@@ -3368,8 +3369,9 @@ local Text = [[
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = ' ❨𖣘• ⁽𝙰𝚂𝙰𝙻𝙸𝚈𝙰₎ •𖣘❩',url="t.me/AsaliyaEgypt"}},
-{{text = '˹《𝚂𝙾𝚄𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽𝙶》˼ ', url="t.me/V_I_K_I_N_G_1"}},
+{{text = '❨𖣘• 𝘼𝙎𝘼𝙇𝙄𝙔𝘼 •𖣘❩', url="t.me/AsaliyaEgypt"}}, 
+{{text = '❨𖣘• 𝙏𝙄𝙈𝙊 •𖣘❩', url="t.me/ttimo_8lby"}}, 
+{{text = '˹《𝚂𝙾𝚄𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽𝙶》˼',url="t.me/V_I_K_I_N_G_1"}},
 {{text = 'اضف البوت الي مجموعتك ✰ ', url="http://t.me/"..sudos.UserName.."?startgroup=new"}},
 }
 local msg_id = msg.id_/2097152/0.5 
@@ -10636,7 +10638,7 @@ end
 database:srem(bot_id..'Muted:User'..msg.chat_id_, userid)
 tdcli_function ({ID = "GetUser",user_id_ = userid},function(arg,data) 
 if data.first_name_ then
-usertext = '\n 🌏 الـعـضو   ⇇['..data.first_name_..'](t.me/'..(data.username_ or 'V_I_K_I_N_G_1')..')'
+usertext = '\n ?? الـعـضو   ⇇['..data.first_name_..'](t.me/'..(data.username_ or 'V_I_K_I_N_G_1')..')'
 status  = '\n 🌏 تم الغاء كتمه'
 send(msg.chat_id_, msg.id_, usertext..status)
 else
@@ -16345,7 +16347,7 @@ Msᴀɢ ~ #msgs
 ]],
 [[
 𓅓➪:ᗰᔕᘜᔕ : #msgs - ❦ .
-𓅓➪ : Iᗪ : #id - ❦ . 
+??➪ : Iᗪ : #id - ❦ . 
 𓅓➪ : ᔕTᗩᔕT : #stast - ❦ . 
 𓅓➪ : ᑌᔕᖇᗴᑎᗩᗰᗴ : #username _ ❦ .
 𓅓➪ : 𝗖𝗛 - ↝@V_I_K_I_N_G_1↜ 🌏
