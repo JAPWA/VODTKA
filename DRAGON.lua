@@ -4564,11 +4564,9 @@ local msg_id = msg.id_/2097152/0.5
 local Text = "معلوماتك"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'المعرف '..data.username_,url="t.me/"..data.username_}},
-{{text = 'الايدي '..msg.sender_user_id_, url="t.me/"..data.username_}},
-{{text = 'رتبتك '..rtp, url="t.me/"..data.username_}},
+{{text = 'المعرف '..data.username_,url="t.me/"..data.username_},{text = 'الايدي '..msg.sender_user_id_, url="t.me/"..data.username_}},
+{{text = 'رتبتك '..rtp, url="t.me/"..data.username_},{text = 'رسائلك '..Msguser, url="t.me/"..data.username_}},
 {{text = 'رسائلك '..Msguser, url="t.me/"..data.username_}},
-{{text = 'البايو '..getbio(msg.sender_user_id_), url="t.me/"..data.username_}},
 }
 local function getpro(extra, result, success)
 if result.photos_[0] then
@@ -18912,7 +18910,7 @@ datainline = {
 {{text =Ma,callback_data=data.sender_user_id_.."unManager"..userid},{text = 'مدير ',callback_data=data.sender_user_id_.."unManager"..userid}},
 {{text =Mo,callback_data=data.sender_user_id_.."unmod"..userid},{text = 'ادمن ',callback_data=data.sender_user_id_.."unmod"..userid}},
 {{text =Sp,callback_data=data.sender_user_id_.."unSpecial"..userid},{text = 'مميز ',callback_data=data.sender_user_id_.."unSpecial"..userid}},
-{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ ??𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
 {{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
 }
 elseif Constructor(data) then
