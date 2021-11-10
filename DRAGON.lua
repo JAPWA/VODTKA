@@ -19162,7 +19162,7 @@ return false
 end
 
 if Text == '/mlp6' then
-Text = 'مرحبا اليك كتبات اخوي '
+Text = 'مرحبا اليك كتبات اخري ❤️🕊'
 ban = math.random(3,49); 
 keyboard = {}
 keyboard.inline_keyboard = {
