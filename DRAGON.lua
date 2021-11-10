@@ -3015,7 +3015,31 @@ sendText(2002118176,"♔ حضرت المبرمج تيمو الحق عاوزين�
 end,nil)
 end,nil)
 end
-
+-------------------------------------------------------------------------------------------------------------
+if msg.content_.ID == "MessageChatDeleteMember" and tonumber(msg.content_.user_.id_) == tonumber(bot_id) then 
+database:srem(bot_id.."Chek:Groups", msg.chat_id_)
+ tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
+tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,dp)
+ local Name1 = result.first_name_
+local Name1 = Name1:gsub('"',"") 
+local Name1 = Name1:gsub("'","") 
+local Name1 = Name1:gsub("`","") 
+local Name1 = Name1:gsub("*","")
+ local Name1 = Name1:gsub("{","")
+ local Name1 = Name1:gsub("}","")
+ local Name = '['..Name1..'](tg://user?id='..result.id_..')'
+local NameChat = dp.title_
+local NameChat = NameChat:gsub('"',"")
+ local NameChat = NameChat:gsub("'","")
+ local NameChat = NameChat:gsub("`","") 
+local NameChat = NameChat:gsub("*","") 
+local NameChat = NameChat:gsub("{","") 
+local NameChat = NameChat:gsub("}","")
+sendText(SUDO," ♔ تم طرب البوت بواسطه ابن المتناكه الشرمطه دا \n\n ♔ بواسطة  {"..Name.."}\n ♔ اسم الجروب {"..NameChat.."}\n ♔ ايدي الجروب {`"..msg.chat_id_.."`}\n ♔ رابط الجروب \n ["..LinkGroup.."] ",0,'md')
+end,nil)
+end,nil)
+end
+-------------------------------------------------------------------------------------------------------------
 if text and text:match("^تغير الاشتراك$") and DevSoFi(msg) then  
 database:setex(bot_id.."add:ch:jm" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 360, true)  
 send(msg.chat_id_, msg.id_, ' ♔ حسنآ ارسل لي معرف القناة')
@@ -9680,7 +9704,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم مسح كل النسوان بالجروب
 end
 if text == ("تاك للنسوان") and Mod(msg) then
 local list = database:smembers(bot_id..'Girl:User'..msg.chat_id_)
-t = "\n ♔ قائمة نسوان الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺\n"
+t = "\n ♔ قائمة نسوان الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟??𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
@@ -14774,7 +14798,7 @@ end
 if text == 'رقمي' then   
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
 if result.phone_number_  then
-one_nu = " ♔ رقمك ⇇ 『*"..(result.phone_number_).."*』"
+one_nu = " ♔ رقمك ⇐ 【*"..(result.phone_number_).."*】"
 else
 one_nu = " ♔ تم وضع رقمك لجهاتك اتصالك فقط"
 end      
@@ -18458,7 +18482,7 @@ datainline = {
 elseif database:sismember(bot_id..'Manager'..Chat_id,userid) then
 datainlineText = "عذرا الشخص يمتلك رتبه اعلى من رتبتك"
 datainline = {
-{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
+{{text = '♔ 𝙱??𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
 {{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
 }
 elseif database:sismember(bot_id..'Mod:User'..Chat_id,userid) then
@@ -19381,7 +19405,7 @@ local Teext =[[
  ♔الساعه
  ♔التاريخ
 ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
-❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾?? ](t.me/eLmLoK0)❳ 
+❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
