@@ -17626,80 +17626,6 @@ end
 end -- Chat_Type = 'GroupBot' 
 end -- end msg 
 --------------------------------------------------------------------------------------------------------------
-if Text == '/mlp6' then
-Text = '❤️🕊'
-ban = math.random(3,49); 
-keyboard = {}
-keyboard.inline_keyboard = {
-{
-{text = 'كتبات أخري', callback_data="/mlp6"},
-},
-}
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Chat_id .. '&photo=https://t.me/dfk9apa/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-if Text == '/mlp5' then
-Text = 'مرحبا اليك لو خيروك بالصوره❤️🕊'
-ban = math.random(1,24); 
-keyboard = {}
-keyboard.inline_keyboard = {
-{
-{text = 'لوخيروك أخري', callback_data="/mlp5"},
-},
-}
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Chat_id .. '&photo=https://t.me/kbbnv/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-if Text == '/mlp4' then
-Text = 'مرحبا إليك تويت بالصوره❤️🕊'
-ban = math.random(1,28); 
-keyboard = {}
-keyboard.inline_keyboard = {
-{
-{text = 'تويت أخري', callback_data="/mlp4"},
-},
-}
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/wffhvv/'..ght..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
-
-if Text == '/mlp1' then
-Text = 'تم بحث عن اغنيه لك'
-ban = math.random(3,42); 
-keyboard = {}
-keyboard.inline_keyboard = {
-{
-{text = 'اغنيه اخري', callback_data="/mlp1"},
-},
-}
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. Chat_id .. '&voice=https://t.me/efwhgsdjg/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-if Text == '/mlp2' then
-Text = 'اضغط علي الزر لاختيار استوري اخر'
-ban = math.random(4,74); 
-keyboard = {}
-keyboard.inline_keyboard = {
-{
-{text = 'استوري أخري', callback_data="/mlp2"},
-},
-}
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. Chat_id .. '&video=https://t.me/sijebehdhd/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-if Text == '/mlp3' then
-Text = 'اضغط علي الزر لاختيار ثيم اخر' 
-ban = math.random(1,57); 
-keyboard = {}
-keyboard.inline_keyboard = {
-{
-{text = 'ثيم أخري', callback_data="/mlp3"},
-},
-}
-DeleteMessage(Chat_id,{[0] = Msg_id})  
-https.request("https://api.telegram.org/bot"..token..'/senddocument?chat_id=' .. Chat_id .. '&document=https://t.me/agklpoj/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
-
 function tdcli_update_callback(data)  -- clback
 if data.ID == "UpdateChannel" then 
 if data.channel_.status_.ID == "ChatMemberStatusKicked" then 
@@ -19236,6 +19162,80 @@ keyboard.inline_keyboard = {
 }
 https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape("*• تم رفعه مطور ثانوي مجموعه*")..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))
 return false
+end
+
+if Text == '/mlp6' then
+Text = '❤️🕊'
+ban = math.random(3,49); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'كتبات أخري', callback_data="/mlp6"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Chat_id .. '&photo=https://t.me/dfk9apa/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if Text == '/mlp5' then
+Text = 'مرحبا اليك لو خيروك بالصوره❤️🕊'
+ban = math.random(1,24); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'لوخيروك أخري', callback_data="/mlp5"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Chat_id .. '&photo=https://t.me/kbbnv/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if Text == '/mlp4' then
+Text = 'مرحبا إليك تويت بالصوره❤️🕊'
+ban = math.random(1,28); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'تويت أخري', callback_data="/mlp4"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Chat_id .. '&photo=https://t.me/wffhvv/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+
+if Text == '/mlp1' then
+Text = 'تم بحث عن اغنيه لك'
+ban = math.random(3,42); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'اغنيه اخري', callback_data="/mlp1"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. Chat_id .. '&voice=https://t.me/efwhgsdjg/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if Text == '/mlp2' then
+Text = 'اضغط علي الزر لاختيار استوري اخر'
+ban = math.random(4,74); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'استوري أخري', callback_data="/mlp2"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. Chat_id .. '&video=https://t.me/sijebehdhd/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if Text == '/mlp3' then
+Text = 'اضغط علي الزر لاختيار ثيم اخر' 
+ban = math.random(1,57); 
+keyboard = {}
+keyboard.inline_keyboard = {
+{
+{text = 'ثيم أخري', callback_data="/mlp3"},
+},
+}
+DeleteMessage(Chat_id,{[0] = Msg_id})  
+https.request("https://api.telegram.org/bot"..token..'/senddocument?chat_id=' .. Chat_id .. '&document=https://t.me/agklpoj/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 
 if Text == '/help1' then
