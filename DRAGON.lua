@@ -19162,12 +19162,15 @@ return false
 end
 
 if Text == '/mlp6' then
-Text = '❤️🕊'
+Text = 'مرحبا اليك كتبات اخوي '
 ban = math.random(3,49); 
 keyboard = {}
 keyboard.inline_keyboard = {
 {
-{text = 'كتبات أخري', callback_data="/mlp6"},
+{text = 'كتبات أخري ❤️🕊', callback_data="/mlp6"},
+},
+{
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
 },
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
@@ -19181,6 +19184,9 @@ keyboard.inline_keyboard = {
 {
 {text = 'لوخيروك أخري', callback_data="/mlp5"},
 },
+{
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
+},
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
 https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Chat_id .. '&photo=https://t.me/kbbnv/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -19192,6 +19198,9 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {
 {text = 'تويت أخري', callback_data="/mlp4"},
+},
+{
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
 },
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
@@ -19206,6 +19215,9 @@ keyboard.inline_keyboard = {
 {
 {text = 'اغنيه اخري', callback_data="/mlp1"},
 },
+{
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
+},
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
 https.request("https://api.telegram.org/bot"..token..'/sendVoice?chat_id=' .. Chat_id .. '&voice=https://t.me/efwhgsdjg/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -19217,6 +19229,9 @@ keyboard = {}
 keyboard.inline_keyboard = {
 {
 {text = 'استوري أخري', callback_data="/mlp2"},
+},
+{
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
 },
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
@@ -19230,9 +19245,36 @@ keyboard.inline_keyboard = {
 {
 {text = 'ثيم أخري', callback_data="/mlp3"},
 },
+{
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
+},
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
 https.request("https://api.telegram.org/bot"..token..'/senddocument?chat_id=' .. Chat_id .. '&document=https://t.me/agklpoj/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+if text == '/QWQW' then
+if not Mod(msg) then
+send(msg.chat_id_, msg.id_,' هذا الامر لا يخصك')
+return false
+end
+local Text =[[
+❤️🕊 اضغط علي الزر لتختيار الشئ الذي تريدو ⇓⇑
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'غنيلي', callback_data="/mlp1"},{text = 'استوري', callback_data="/mlp2"},
+},
+{
+{text = 'ثيم', callback_data="/mlp3"},{text = 'كتبات اخري', callback_data="/mlp6"},
+},
+{
+{text = 'تويت بالصوره', callback_data="/mlp4"},{text = 'لو خيروك بالصوره', callback_data="/mlp5"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false
 end
 
 if Text == '/help1' then
