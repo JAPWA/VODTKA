@@ -19170,7 +19170,7 @@ keyboard.inline_keyboard = {
 {text = 'كتبات أخري ❤️🕊', callback_data="/mlp6"},
 },
 {
-{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/ZZUU"},
 },
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
@@ -19185,7 +19185,7 @@ keyboard.inline_keyboard = {
 {text = 'لوخيروك أخري', callback_data="/mlp5"},
 },
 {
-{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/ZZUU"},
 },
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
@@ -19200,7 +19200,7 @@ keyboard.inline_keyboard = {
 {text = 'تويت أخري', callback_data="/mlp4"},
 },
 {
-{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/ZZUU"},
 },
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
@@ -19216,7 +19216,7 @@ keyboard.inline_keyboard = {
 {text = 'اغنيه اخري', callback_data="/mlp1"},
 },
 {
-{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/ZZUU"},
 },
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
@@ -19231,7 +19231,7 @@ keyboard.inline_keyboard = {
 {text = 'استوري أخري', callback_data="/mlp2"},
 },
 {
-{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/ZZUU"},
 },
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
@@ -19243,16 +19243,16 @@ ban = math.random(1,57);
 keyboard = {}
 keyboard.inline_keyboard = {
 {
-{text = 'ثيم أخري', callback_data="/QWQW"},
+{text = 'ثيم أخري', callback_data="/mlp3"},
 },
 {
-{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
+{text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/ZZUU"},
 },
 }
 DeleteMessage(Chat_id,{[0] = Msg_id})  
 https.request("https://api.telegram.org/bot"..token..'/senddocument?chat_id=' .. Chat_id .. '&document=https://t.me/agklpoj/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
-if text == '/QWQW' then
+if text == '/ZZUU' then
 if not Mod(msg) then
 send(msg.chat_id_, msg.id_,' هذا الامر لا يخصك')
 return false
