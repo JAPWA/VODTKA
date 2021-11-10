@@ -13325,14 +13325,7 @@ if not GeId.result.custom_title then
 send(msg.chat_id_, msg.id_,' ♔وينك وين القب ') 
 else
 send(msg.chat_id_, msg.id_,' ♔لقبك هو : '..GeId.result.custom_title) 
-local function getpro(extra, result, success) 
-if result.photos_[0] then 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo='..result.photos_[0].sizes_[1].photo_.persistent_id_..'&photo=' .. URL.escape(textt).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-else 
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=' .. URL.escape(Jabwa).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end end 
-tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
-end,nil)
+end
 end
 if text == "فحص البوت" and Manager(msg) then
 local chek = https.request('https://api.telegram.org/bot'..token..'/getChatMember?chat_id='..msg.chat_id_..'&user_id='..bot_id)
@@ -18470,7 +18463,7 @@ datainline = {
 {{text ='♔  مميز',callback_data=data.sender_user_id_.."Special"..userid}},
 {{text ='♔  ادمن',callback_data=data.sender_user_id_.."mod"..userid}},
 {{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},
-{{text = '♔ 𝚂𝙾𝚄𝚁𝙲?? 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
+{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
 }
 end
 elseif Mod(data) then
