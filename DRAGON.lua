@@ -3527,6 +3527,25 @@ https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. 
 return false
 end
 
+if text == 'الرتب' then
+if not Mod(msg) then
+send(msg.chat_id_, msg.id_,' هذا الامر لا يخصك')
+return false
+end
+local Text =[[
+♔ مرحبا يمكنك اختيار رتبه ⇓⇑
+]]
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'المنشئ ♔', callback_data="/mlp1"},{text = 'المطور ♔', callback_data="/mlp2"},
+},
+}
+local msg_id = msg.id_/2097152/0.5
+https.request("https://api.telegram.org/bot"..token..'/sendMessage?chat_id=' .. msg.chat_id_ .. '&text=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+return false
+end
+
 if text == 'يوتيوب' or text == 'بحث' or text == 'اليوتيوب' then
 local Text = [[
 ♔الـيـك بـوتـات تـحمـيـل مـن جـمـيـع الـمواقـع ⇓⇑
@@ -16475,7 +16494,7 @@ Msᴀɢ ~ #msgs
 • 🇪🇬 - 𝚄𝚂𝙴𝚁 « #username  🍭
 • 🇪🇬 - 𝙸𝙳 « #id  🍭
 • 🇪🇬 - 𝙼𝚂𝙶𝚂 « #msgs  🍭
-• 🇪🇬 - 𝚂𝚃𝙰𝚂𝚃 « #stast  🍭
+• 🇪🇬 - ??𝚃𝙰𝚂𝚃 « #stast  🍭
 • 🇪🇬 - 𝗖𝗛 - »@eLmLoK0« ♔
 ]],
 [[
