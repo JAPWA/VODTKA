@@ -14771,6 +14771,16 @@ end
 if text == 'ايديي' then
 send(msg.chat_id_, msg.id_,' ♔ ايديك  ⇦♔'..msg.sender_user_id_)
 end
+if text == 'رقمي' then   
+tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
+if result.phone_number_  then
+one_nu = " ♔ رقمك ⇇ 『*"..(result.phone_number_).."*』"
+else
+one_nu = " ♔ تم وضع رقمك لجهاتك اتصالك فقط"
+end      
+send(msg.chat_id_, msg.id_,one_nu) 
+end,nil)
+end
 if text == 'الرتبه' and tonumber(msg.reply_to_message_id_) > 0 then
 function start_function(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(extra,data) 
@@ -18077,7 +18087,7 @@ end
 database:srem(bot_id..'Ban:User'..Chat_id, userid)
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = Chat_id, user_id_ = userid, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 ??𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
+keyboard.inline_keyboard = {{{text = '♔ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},}
 https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape('\n*♔ تـــم الغــاء حظـــره*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 return false
 end
@@ -19371,7 +19381,7 @@ local Teext =[[
  ♔الساعه
  ♔التاريخ
 ⩹━━━⊶❲𝗘𝗟𝗠𝗟𝗢𝗞❳⊷━━━⩺
-❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ](t.me/eLmLoK0)❳ 
+❲[♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾?? ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
