@@ -3513,13 +3513,13 @@ local Text =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'غنيلي', callback_data="/mlp1"},{text = 'استوري', callback_data="/mlp2"},
+{text = 'غنيلي ♔', callback_data="/mlp1"},{text = 'استوري ♔', callback_data="/mlp2"},
 },
 {
-{text = 'ثيم', callback_data="/mlp3"},{text = 'كتبات اخري', callback_data="/mlp6"},
+{text = 'ثيم ♔', callback_data="/mlp3"},{text = 'كتبات اخري ♔', callback_data="/mlp6"},
 },
 {
-{text = 'تويت بالصوره', callback_data="/mlp4"},{text = 'لو خيروك بالصوره', callback_data="/mlp5"},
+{text = 'تويت بالصوره ♔', callback_data="/mlp4"},{text = 'لو خيروك بالصوره ♔', callback_data="/mlp5"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
@@ -19167,7 +19167,7 @@ ban = math.random(3,49);
 keyboard = {}
 keyboard.inline_keyboard = {
 {
-{text = 'كتبات أخري ❤️🕊', callback_data="/mlp6"},
+{text = 'كتبات أخري ♔', callback_data="/mlp6"},
 },
 {
 {text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
@@ -19182,7 +19182,7 @@ ban = math.random(1,24);
 keyboard = {}
 keyboard.inline_keyboard = {
 {
-{text = 'لوخيروك أخري', callback_data="/mlp5"},
+{text = 'لوخيروك أخري ♔', callback_data="/mlp5"},
 },
 {
 {text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
@@ -19197,7 +19197,7 @@ ban = math.random(1,28);
 keyboard = {}
 keyboard.inline_keyboard = {
 {
-{text = 'تويت أخري', callback_data="/mlp4"},
+{text = 'تويت أخري ♔', callback_data="/mlp4"},
 },
 {
 {text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
@@ -19208,12 +19208,12 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. Ch
 end
 
 if Text == '/mlp1' then
-Text = 'تم بحث عن اغنيه لك'
+Text = 'مرحبا اليك غنيلي ❤️🕊'
 ban = math.random(3,42); 
 keyboard = {}
 keyboard.inline_keyboard = {
 {
-{text = 'اغنيه اخري', callback_data="/mlp1"},
+{text = 'اغنيه اخري ♔', callback_data="/mlp1"},
 },
 {
 {text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
@@ -19228,7 +19228,7 @@ ban = math.random(4,74);
 keyboard = {}
 keyboard.inline_keyboard = {
 {
-{text = 'استوري أخري', callback_data="/mlp2"},
+{text = 'استوري أخري ♔', callback_data="/mlp2"},
 },
 {
 {text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
@@ -19238,12 +19238,12 @@ DeleteMessage(Chat_id,{[0] = Msg_id})
 https.request("https://api.telegram.org/bot"..token..'/sendvideo?chat_id=' .. Chat_id .. '&video=https://t.me/sijebehdhd/'..ban..'&caption=' .. URL.escape(Text).."&reply_to_message_id=0&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 if Text == '/mlp3' then
-Text = 'اضغط علي الزر لاختيار ثيم اخر' 
+Text = 'مرحبا اليك ثيم ❤️🕊' 
 ban = math.random(1,57); 
 keyboard = {}
 keyboard.inline_keyboard = {
 {
-{text = 'ثيم أخري', callback_data="/mlp3"},
+{text = 'ثيم أخري ♔', callback_data="/mlp3"},
 },
 {
 {text = '♔ 𝙱𝙰𝙲𝙺', callback_data="/QWQW"},
@@ -19259,13 +19259,13 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'غنيلي', callback_data="/mlp1"},{text = 'استوري', callback_data="/mlp2"},
+{text = 'غنيلي ♔', callback_data="/mlp1"},{text = 'استوري', callback_data="/mlp2"},
 },
 {
-{text = 'ثيم', callback_data="/mlp3"},{text = 'كتبات اخري', callback_data="/mlp6"},
+{text = 'ثيم ♔', callback_data="/mlp3"},{text = 'كتبات اخري', callback_data="/mlp6"},
 },
 {
-{text = 'تويت بالصوره', callback_data="/mlp4"},{text = 'لو خيروك بالصوره', callback_data="/mlp5"},
+{text = 'تويت بالصوره ♔'', callback_data="/mlp4"},{text = 'لو خيروك بالصوره', callback_data="/mlp5"},
 },
 }
 local msg_id = msg.id_/2097152/0.5
