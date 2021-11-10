@@ -3496,7 +3496,10 @@ local keyboard = {
 {{text = '♔ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"}},
 }
 local msg_id = msg.id_/2097152/0.5
-https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. msg.chat_id_ .. '&photo=https://t.me/ttimo_8lby&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+send_inline_key(msg.chat_id_,"*♔ مرحبـا بـــك فــي قائمــه التحكــم اضغــط علــي الامــر فــي الاسفــل ⇓⇑*",nil,keyboard,msg_id)
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, start_function, nil)
+return false
 end
 
 if text == 'يوتيوب' or text == 'بحث' or text == 'اليوتيوب' then
@@ -9701,7 +9704,7 @@ send(msg.chat_id_, msg.id_, ' ♔ تم مسح كل النسوان بالجروب
 end
 if text == ("تاك للنسوان") and Mod(msg) then
 local list = database:smembers(bot_id..'Girl:User'..msg.chat_id_)
-t = "\n ♔ قائمة نسوان الجروب \n⩹━━━⊶❲𝗘𝗟??𝗟??𝗞❳⊷━━━⩺\n"
+t = "\n ♔ قائمة نسوان الجروب \n⩹━━━⊶❲𝗘𝗟𝗠𝗟??𝗞❳⊷━━━⩺\n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."user:Name" .. v)
 if username then
