@@ -3366,7 +3366,7 @@ if text == 'SOURCE' or text == 'سورس' or text == 'السورس' or text == '
 local Text = [[
 ╭╾╾╾𓆩[𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](http://t.me/eLmLoK0)𓆪╾╾╾╮
 ┆
-┆[♤ 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ♤](http://t.me/eLmLoK0)
+┆[𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](http://t.me/eLmLoK0)
 ┆
 ╰╾╾╾𓆩[𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](http://t.me/eLmLoK0)𓆪╾╾╾╯
 ]]
@@ -3382,11 +3382,11 @@ end
 
 if text == 'مين نصبلك' or text == 'عايزه بوت' or text == 'عايز بوت' then
 local Text = [[
-╭╾╾╾𓆩[♤𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](http://t.me/eLmLoK0)𓆪╾╾╾╮
+╭╾╾╾𓆩[𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](http://t.me/eLmLoK0)𓆪╾╾╾╮
 ┆
-┆[♤ 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ♤](http://t.me/eLmLoK0)
+┆[𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](http://t.me/eLmLoK0)
 ┆
-╰╾╾╾𓆩[♤𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](http://t.me/eLmLoK0)𓆪╾╾╾╯
+╰╾╾╾𓆩[𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺](http://t.me/eLmLoK0)𓆪╾╾╾╯
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -17573,9 +17573,7 @@ local Text = [[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '♤ 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼',url="https://my.telegram.org/auth?to=delete"},{text = '♤ 𝙴𝙽𝚂𝚃𝙰', url="https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/"}}, 
-{{text = '⩹━━━⊶❲𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♤ 𝙵𝙰𝙲𝙴𝙱𝙾𝙾𝙺', url="https://www.facebook.com/help/deleteaccount"},{text = '♤ 𝚂𝙽𝙰𝙱𝚂𝙷𝙰𝚃', url="https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.snapchat.com%2Faccounts%2Fdeleteaccount"}}, 
-{{text = '⩹━━━⊶❲𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ♤', url="t.me/eLmLoK0"}},
 }
 local msg_id = msg.id_/2097152/0.5
@@ -20111,12 +20109,12 @@ local Teext =[[
  ♤   بتحب دي ♢ بتحب ده
  ♤  بوت الحذف♢رابط الحذف
 ⩹━━━⊶❲𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺❳⊷━━━⩺
- ❲[《𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻??𝙻𝙾𝙺》 ](t.me/eLmLoK0)❳ 
+ ❲[《𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺》 ](t.me/eLmLoK0)❳ 
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '◗القائمه الرائسيه◖', callback_data="/change-id"},
+{text = 'القائمه الرائسيه', callback_data="/change-id"},
 },
 {
 {text = '𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺', url="t.me/eLmLoK0"},
@@ -20239,12 +20237,11 @@ return false
 end
 if Text == '/HHH' then
 local Teext =[[
-♤ 𝚆𝙴??𝙲𝙾𝙼𝙴 𝚃?? 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ♤
+♤ 𝚆𝙴𝙻𝙲𝙾𝙼𝙴 𝚃𝙾 𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺 ♤
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '♤ 𝙼𝚈 𝙳𝙴𝚅', callback_data="/units"},{text = '♤ 𝙼𝚈 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', callback_data="/theytry"}},   
-{{text = '⩹━━━⊶❲𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
+{{text = '𝙼𝚈 𝙳𝙴𝚅', callback_data="/units"},{text = '𝙼𝚈 𝙲𝙷𝙰𝙽𝙽𝙴𝙻', callback_data="/theytry"}},   
 {{text = 'الــمـــطــور ♤', url="http://t.me/"..sudos.UserName}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
@@ -20267,9 +20264,7 @@ local Teext =[[
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = '♤ 𝚃𝙸𝙼𝙾',url="t.me/ttimo_8lby"},{text = '♤ 𝙹𝙰𝙱𝚆𝙰',url="t.me/J_A_B_W_A"}},
-{{text = '⩹━━━⊶❲𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♤ 𝙾𝙼𝙰𝚁',url="t.me/teemElmelok"},{text = '♤ 𝙰𝙱𝙾 𝙴𝙻𝙼𝙰𝙶𝙳',url="t.me/ABO_ELMAGD2"}},
-{{text = '⩹━━━⊶❲𝚂𝙾𝚄𝚁𝙲𝙴 𝙴𝙻𝙼𝙻𝙾𝙺❳⊷━━━⩺', url="https://t.me/eLmLoK0"}},
 {{text = '♤ 𝙱𝙰𝙲𝙺', callback_data="/HHH"}},
 }
 return https.request("https://api.telegram.org/bot"..token..'/editMessagecaption?chat_id='..Chat_id..'&caption='..URL.escape(Teext)..'&message_id='..msg_idd..'&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard))  
