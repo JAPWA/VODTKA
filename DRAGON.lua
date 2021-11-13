@@ -145,16 +145,13 @@ local config = loadfile("./kkkklInfo.lua")()
 return config 
 end 
 _redis = load_redis()  
---------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------
 print([[
-
-
-   ___            ___             ____               __    
-  / _ | ___ ___ _/ (_)_ _____ _  / __/__ ___ _____  / /_   
- / __ |(_-</ _ `/ / / // / _ `/ / _// _ `/ // / _ \/ __/   
-/_/ |_/___/\_,_/_/_/\_, /\_,_/ /___/\_, /\_, / .__/\__/    
-                   /___/           /___//___/_/            
-                          
+-------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------
+ ----------------------------------------------------------------------------------------------------------
+ 
 > CH ❃ ↝@A_L_M_G_H_O_L69↜
 ~> DEVELOPER ❃ {text = @A_L_M_G_H_O_L
 ]])
@@ -14008,7 +14005,7 @@ end
 if text == "انا مين" then
 local my_ph = database:get(bot_id.."my_anamen:status"..msg.chat_id_)
 if not my_ph then
-send(msg.chat_id_, msg.id_," ♔انا مين معطله") 
+send(msg.chat_id_, msg.id_," ❃انا مين معطله") 
 return false  
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
@@ -14034,46 +14031,6 @@ https.request("https://api.telegram.org/bot"..token..'/sendPhoto?chat_id=' .. ms
 end end 
 tdcli_function ({ ID = "GetUserProfilePhotos", user_id_ = msg.sender_user_id_, offset_ = 0, limit_ = 1 }, getpro, nil) 
 end,nil)
-end
-
-if text == 'انا مين' and Sudo(msg) then 
-local my_ph = database:get(bot_id.."my_anamen:status"..msg.chat_id_)
-if not my_ph then
-send(msg.chat_id_, msg.id_," ❃انا مين معطله") 
-return false  
-end
-send(msg.chat_id_,msg.id_, '[انت المطور بس الصغنن 🌝💘](t.me/A_L_M_G_H_O_L69)')
-return false
-end
-
-if text == 'انا مين' and CoSu(msg) then 
-local my_ph = database:get(bot_id.."my_anamen:status"..msg.chat_id_)
-if not my_ph then
-send(msg.chat_id_, msg.id_," ❃انا مين معطله") 
-return false  
-end
-send(msg.chat_id_,msg.id_, '[نت المالك هن يعني حاجه فوق فوف راسي 😂♥](t.me/A_L_M_G_H_O_L69)')
-return false
-end
-
-if text == 'انا مين' and Constructor(msg) then 
-local my_ph = database:get(bot_id.."my_anamen:status"..msg.chat_id_)
-if not my_ph then
-send(msg.chat_id_, msg.id_," ❃انا مين معطله") 
-return false  
-end
-send(msg.chat_id_,msg.id_, '[انت منشئ يسطا عتلاء منشئ عاوز حاجه تانيه😹🤦‍♂️](t.me/A_L_M_G_H_O_L69)')
-return false
-end
-
-if text == 'انا مين' and BasicConstructor(msg) then 
-local my_ph = database:get(bot_id.."my_anamen:status"..msg.chat_id_)
-if not my_ph then
-send(msg.chat_id_, msg.id_," ❃انا مين معطله") 
-return false  
-end
-send(msg.chat_id_,msg.id_, '[ انت هنا منشئ اساسي يعني اعلى رتبه عاوزك تفتخر😂🎯](t.me/A_L_M_G_H_O_L69)')
-return false
 end
 
 if text == "تفعيل ردود السورس"  then
@@ -16617,7 +16574,7 @@ Msᴀɢ ~ #msgs
 金 - 𝗖𝗛 - ↝@A_L_M_G_H_O_L69↜ ❃
 ]],
 [[
-- 🇪🇬 𝐮??𝐞𝐫𝒏𝒂𝒎𝒆 . #username 𖣂.
+- 🇪🇬 𝐮𝐬𝐞𝐫𝒏𝒂𝒎𝒆 . #username 𖣂.
 - 🇪🇬 𝒔𝒕𝒂𝒔𝒕 . #stast 𖣂.
 - 🇪🇬 𝐢𝐝 . #id 𖣂.
 - 🇪🇬 𝒈𝒂𝒎𝒆𝒔 . #game 𖣂.
@@ -17270,7 +17227,7 @@ end
 if text == 'اوامر العضو' or text == 'اوامر الأعضاء' or text == 'اوامر الاعضاء' then
 local Text = [[
  اهلا بك في اوامر العضو.🚦
-☾ 𝚂𝙾𝚄𝚁𝙲𝙴 𝚅??𝙺𝙸𝙽 ☽
+☾ 𝚂𝙾𝚄𝚁𝙲𝙴 𝚅𝙸𝙺𝙸𝙽 ☽
 اختر الكلمه الذي تريده بـ الأسفل.⬇️
 [˹𝑠𝑜𝑢𝑟𝑐𝑒 𝑎𝑙𝑚𝑔ℎ𝑜𝑙˼](t.me/A_L_M_G_H_O_L69)
 ]]
@@ -18406,7 +18363,7 @@ https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='
 else
 if data.can_be_deleted_ == false then 
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '˹𝑠𝑜𝑢𝑟𝑐𝑒 𝑎𝑙𝑚𝑔ℎ𝑜𝑙˼', url="t.me/A_L_M_G_H_O_L69"}},}
+keyboard.inline_keyboard = {{{text = '√ 𝙱𝙰𝙲𝙺',callback_data=data.sender_user_id_.."Bbk"..userid}},{{text = '˹𝑠𝑜𝑢𝑟𝑐𝑒 𝑎𝑙𝑚??ℎ𝑜𝑙˼', url="t.me/A_L_M_G_H_O_L69"}},}
 https.request("https://api.telegram.org/bot"..token..'/editMessageText?chat_id='..Chat_id..'&text='..URL.escape(' *√ البوت ليس ادمن يرجى ترقيتي !*')..'&message_id='..msg_idd..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboard)) 
 return false  
 end
